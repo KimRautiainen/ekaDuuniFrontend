@@ -1,0 +1,33 @@
+/* Global Styles - global.css */
+
+/* Import Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+/* Global Variables */
+:root {
+  --font-primary: 'Inter', sans-serif;
+  --font-weight-normal: 400;
+  --font-size-base: 16px;
+  --line-height-base: 19.36px;
+  --letter-spacing-base: -0.02em;
+
+  /* Colors */
+  --color-primary: #2563eb; /* Main blue */
+  --color-primary-dark: #1e40af;
+  --color-background: #1a202c; /* Dark background */
+  --color-text-light: white;
+  --color-box-bg: #FFFFFF12; /* Transparent White Box */
+}
+
+/* Apply Default Styles */
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-base);
+  background-color: var(--color-background);
+  color: var(--color-text-light);
+  margin: 0;
+  padding: 0;
+}

@@ -1,26 +1,24 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from ("../store/AuthContext");
+import "./Navbar.css";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext);
-
   return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between">
-      <div className="text-lg font-bold">
-        <NavLink to="/" className={({ isActive }) => isActive ? "underline" : ""}>DevConnect</NavLink>
+    <nav className="navbar">
+      {/* DevStart Button (No Background) */}
+      <button className="navbar-logo">&lt;DevStart/&gt;</button>
+
+      {/* Center Box with Links */}
+      <div className="navbar-center-box">
+        <NavLink to="/" className="navbar-link">Etusivu</NavLink>
+        <NavLink to="/about" className="navbar-link">Tietoa meistä</NavLink>
+        <NavLink to="/services" className="navbar-link">Jotain muuta</NavLink>
+        <NavLink to="/contact" className="navbar-link">Jotain muuta</NavLink>
       </div>
-      <div>
-        <NavLink to="/jobs" className={({ isActive }) => isActive ? "underline mr-4" : "mr-4"}>Jobs</NavLink>
-        {user ? (
-          <>
-            <NavLink to="/dashboard" className={({ isActive }) => isActive ? "underline mr-4" : "mr-4"}>Dashboard</NavLink>
-            <NavLink to="/profile" className={({ isActive }) => isActive ? "underline mr-4" : "mr-4"}>Profile</NavLink>
-            <button onClick={logout} className="bg-red-500 px-3 py-1 rounded">Logout</button>
-          </>
-        ) : (
-          <NavLink to="/login" className={({ isActive }) => isActive ? "underline" : ""}>Login</NavLink>
-        )}
+
+      {/* Right-Side Buttons */}
+      <div className="navbar-buttons">
+        <NavLink to="/register" className="navbar-small-box">Luo käyttäjä</NavLink>
+        <NavLink to="/login" className="navbar-small-box">Kirjaudu</NavLink>
       </div>
     </nav>
   );

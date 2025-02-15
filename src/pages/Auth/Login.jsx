@@ -1,29 +1,42 @@
-import { useContext, useState } from 'react';
-import AuthContext from '../../store/AuthContext';
-
+import { useContext, useState } from "react";
+import AuthContext from "../../store/AuthContext";
+import "./Login.css"
 
 const Login = () => {
-    const { login } = useContext(AuthContext); // Get the login function from the AuthContext
-    const [formData, setFormData] = useState({ email: "", password: "" }); // Create a state to store the form data
+  const { login } = useContext(AuthContext);
+  const [formData, setFormData] = useState({ email: "", password: "" });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value }); // Update the form data when the user types
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent the default form submission
-        login(formData); // Call the login function
-    }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    return (
-        <div className="flex justify-center items-center h-screen">
-          <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold mb-4">Login</h2>
-            <input type="email" name="email" placeholder="Email" className="border p-2 w-full mb-2" onChange={handleChange} />
-            <input type="password" name="password" placeholder="Password" className="border p-2 w-full mb-2" onChange={handleChange} />
-            <button type="submit" className="bg-blue-500 text-white p-2 w-full rounded">Login</button>
-          </form>
-        </div>
-      );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(formData);
+  };
+
+  return (
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2 className="login-title">Login</h2>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          className="login-input"
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          className="login-input"
+          onChange={handleChange}
+        />
+        <button type="submit" className="login-button">Login</button>
+      </form>
+    </div>
+  );
 };
 
 export default Login;

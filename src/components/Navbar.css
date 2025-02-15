@@ -1,0 +1,76 @@
+@import '../styles/variables.css';
+
+.navbar {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  position: fixed;
+  top: 44px;
+  left: 0;
+  z-index: 1000;
+  background: transparent;
+  font-family: var(--font-primary);
+}
+
+.navbar-logo {
+  font-size: 20px;
+  font-weight: var(--font-weight-normal);
+  letter-spacing: var(--letter-spacing-small);
+  color: var(--color-text-light);
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-right: 2rem;
+}
+
+.navbar-center-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-box-bg); /* Figma background color */
+    width: 647px; /* Exact width */
+    height: 56px; /* Exact height */
+    border-radius: 10px; /* Rounded corners */
+    border-top: 0.5px solid rgba(255, 255, 255, 0.71); /* Only top border */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Figma shadow */
+    opacity: 0.48; /* Match opacity */
+    
+  }
+
+.navbar-link {
+  text-decoration: none;
+  color: var(--color-text-light) !important;
+  transition: color 0.2s;
+}
+
+.navbar-link:hover {
+  color: var(--color-primary);
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.navbar-small-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-box-bg);
+  height: 56px;
+  width: 125px;
+  border-radius: 6px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.navbar-small-box:hover {
+  background-color: var(--color-primary-dark);
+}

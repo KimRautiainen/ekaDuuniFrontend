@@ -1,0 +1,101 @@
+/* LandingPage.css */
+@import '../styles/variables.css';
+
+.landing-container {
+    min-height: 100vh;
+    width: 100vw;  /* Full viewport width */
+    background-color: var(--color-background); /* Dark background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20rem;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  }
+  
+  .landing-logo {
+    width: 200px; /* Adjust size of logo */
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .search-bar input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    color: black;
+  }
+  
+  .search-bar button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .technology-carousel {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .technology-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 700px;
+  }
+  
+  .technology-item {
+    background-color: #2563eb;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .info-section {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    max-width: 700px;
+    background-color: #2d3748;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .info-section p {
+    color: #a0aec0;
+  }
+  
+  .jobs-link {
+    margin-top: 2rem;
+    background-color: #10b981;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+  }
+  
