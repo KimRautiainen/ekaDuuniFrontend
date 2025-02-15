@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
-import jwtDecode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { apiUrl } from "../../utils/app-config";
 
@@ -46,3 +46,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export default AuthContext;

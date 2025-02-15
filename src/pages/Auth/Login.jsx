@@ -1,14 +1,14 @@
 import { useContext, useState } from 'react';
 import AuthContext from '../../store/AuthContext';
 
+
 const Login = () => {
     const { login } = useContext(AuthContext); // Get the login function from the AuthContext
     const [formData, setFormData] = useState({ email: "", password: "" }); // Create a state to store the form data
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value }); // Update the form data state
+        setFormData({ ...formData, [e.target.name]: e.target.value }); // Update the form data when the user types
     }
-
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent the default form submission
         login(formData); // Call the login function
