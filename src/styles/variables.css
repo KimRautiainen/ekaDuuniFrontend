@@ -1,0 +1,43 @@
+/* variables.css */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Roboto:wght@500&display=swap');
+
+/* Global Variables */
+:root {
+  /* Font Families */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  /* Font Sizes */
+  --font-size-small: 14px;
+  --font-size-base: 16px;
+  --font-size-large: 18px;
+  --font-size-heading: 24px;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+
+  /* Line Heights */
+  --line-height-base: 19.36px;
+  --line-height-heading: 28px;
+
+  /* Letter Spacing */
+  --letter-spacing-small: -0.02em;
+  --letter-spacing-normal: 0;
+
+  /* Colors */
+  --color-primary: #2563eb; /* Blue */
+  --color-primary-dark: #1e40af;
+  --color-secondary: #10b981; /* Green */
+  --color-text-gray: #AEAEAE;  /* Gray text color */
+  --color-text-light: #FFFFFF; /* White text color */
+  --color-orange: #F3794C; /* Orange */
+  --color-background: #0F0F0F; /* Dark background */
+  --color-background-gray: #232323; /* Gray background */
+  --color-box-bg: rgba(255, 255, 255, 0.07); 
+  
+
+}
