@@ -35,7 +35,7 @@
     border-radius: 10px; /* Rounded corners */
     border-top: 0.5px solid rgba(255, 255, 255, 0.71); /* Only top border */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Figma shadow */
-    opacity: 0.48; /* Match opacity */
+    
     
   }
 
@@ -62,13 +62,17 @@
   background-color: var(--color-box-bg);
   height: 56px;
   width: 125px;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
   color: var(--color-text-light);
   text-decoration: none;
   transition: background 0.2s;
   white-space: nowrap;
+  
+  border-top: 0.5px solid rgba(255, 255, 255, 0.71);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
 }
 
 .navbar-small-box:hover {

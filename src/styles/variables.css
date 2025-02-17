@@ -33,9 +33,9 @@
   --color-primary-dark: #1e40af;
   --color-secondary: #10b981; /* Green */
   --color-text-light: #FFFFFF; /* White text color */
-  --color-text-dark: #111827;
+  --color-orange: #F3794C; /* Orange */
   --color-background: #0F0F0F; /* Dark background */
-  --color-box-bg: rgba(255, 255, 255, 0.07); /* dark background with 12% opacity */
+  --color-box-bg: rgba(255, 255, 255, 0.07); 
   
 
 }
