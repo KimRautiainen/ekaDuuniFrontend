@@ -3,7 +3,7 @@ import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import { apiUrl } from "../../utils/app-config";
+import { authUrl } from "../utils/app-config";
 
 const AuthContext = createContext(); // Create a context
 
@@ -23,15 +23,26 @@ export const AuthProvider = ({ children }) => {
   // Login function
   const login = async (credentials) => {
     try {
-      const res = await axios.post(apiUrl + "login", credentials); // Make a POST request to the login endpoint
-      localStorage.setItem("token", res.data.token); // Store the token in the local storage
-      setUser(jwtDecode(res.data.token)); // Set the user state
-      navigate("/dashboard"); // Navigate to the dashboard
+      console.log("Logging in with credentials:",
+      credentials);
+      const res = await axios.post(authUrl + "login", credentials, {
+        headers: { "Content-Type": "application/json" }, // Ensure JSON format
+      });
+  
+      // Store token in localStorage
+      localStorage.setItem("token", res.data.token);
+  
+      // Set user from backend response
+      setUser(res.data.user);
+  
+      navigate("/dashboard"); // Redirect to dashboard
+      return true;
     } catch (error) {
-      console.log(error); // Log the error
-      // TODO - Handle error 
+      console.error("Login failed:", error.response?.data?.message || error.message);
+      return false;
     }
   };
+  
 
   // Logout function
   const logout = () => {
