@@ -20,29 +20,56 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  // Login function
-  const login = async (credentials) => {
+  // Register function
+  const register = async (userData) => {
     try {
-      console.log("Logging in with credentials:",
-      credentials);
-      const res = await axios.post(authUrl + "login", credentials, {
-        headers: { "Content-Type": "application/json" }, // Ensure JSON format
+      console.log("Registering user:", userData);
+      const res = await axios.post(authUrl + "register", userData, {
+        headers: { "Content-Type": "application/json" },
       });
-  
+
       // Store token in localStorage
       localStorage.setItem("token", res.data.token);
-  
-      // Set user from backend response
+
+      // Set user state
       setUser(res.data.user);
-  
-      navigate("/dashboard"); // Redirect to dashboard
+
+      // Navigate to dashboard
+      navigate("/dashboard");
       return true;
     } catch (error) {
-      console.error("Login failed:", error.response?.data?.message || error.message);
+      console.error(
+        "Registration failed:",
+        error.response?.data?.message || error.message
+      );
       return false;
     }
   };
-  
+
+  // Login function
+  const login = async (credentials) => {
+    try {
+      console.log("Logging in with credentials:", credentials);
+      const res = await axios.post(authUrl + "login", credentials, {
+        headers: { "Content-Type": "application/json" }, // Ensure JSON format
+      });
+
+      // Store token in localStorage
+      localStorage.setItem("token", res.data.token);
+
+      // Set user from backend response
+      setUser(res.data.user);
+
+      navigate("/dashboard"); // Redirect to dashboard
+      return true;
+    } catch (error) {
+      console.error(
+        "Login failed:",
+        error.response?.data?.message || error.message
+      );
+      return false;
+    }
+  };
 
   // Logout function
   const logout = () => {
@@ -52,7 +79,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, register, setUser }}>
       {children}
     </AuthContext.Provider>
   );

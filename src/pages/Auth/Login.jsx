@@ -4,8 +4,12 @@ import "./Login.css";
 import googleLogo from "../../assets/web_light_rd_ctn.svg"; // Use your downloaded SVG logo
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const { login, register } = useContext(AuthContext);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    fullName: "",
+  });
   const [isRegistering, setIsRegistering] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [error, setError] = useState(""); // Track login errors
@@ -16,19 +20,37 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    if (!formData.email || !formData.password) {
-      setError("Please enter both email and password.");
+
+    console.log("Submitting form:", formData); // ✅ Debugging
+
+    if (
+      !formData.email ||
+      !formData.password ||
+      (isRegistering && !formData.fullName)
+    ) {
+      setError("Please fill in all fields.");
       return;
     }
-  
-    setError(""); // Clear previous errors
-    
-    console.log("Logging in with:", formData);
-    const success = await login(formData);
-  
-    if (!success) {
-      setError("Invalid email or password. Please try again.");
+
+    setError("");
+    console.log(isRegistering ? "Registering..." : "Logging in..."); // ✅ Debugging
+    if (isRegistering) {
+      console.log("Calling register function..."); // ✅ Debugging
+      const success = await register(formData);
+      console.log("Register function response:", success); // ✅ Debugging
+      if (!success) {
+        setError("Registration failed. Try again.");
+      }
+    } else {
+      console.log("Calling login function..."); // ✅ Debugging
+      const success = await login({
+        email: formData.email,
+        password: formData.password,
+      });
+      console.log("Login function response:", success); // ✅ Debugging
+      if (!success) {
+        setError("Invalid email or password.");
+      }
     }
   };
 
@@ -42,25 +64,31 @@ const Login = () => {
       {/* Right Side - Login / Register Form */}
       <div className="auth-form-container">
         {isRegistering ? (
-          <form className="auth-form">
+          <form onSubmit={handleSubmit} className="auth-form">
             <h2>Register</h2>
             <input
               type="text"
               name="fullName"
               placeholder="Full Name"
               className="auth-input"
+              onChange={handleChange} // ✅ Fix: Ensure input updates formData
+              required
             />
             <input
               type="email"
               name="email"
               placeholder="Email"
               className="auth-input"
+              onChange={handleChange} // ✅ Fix
+              required
             />
             <input
               type="password"
               name="password"
               placeholder="Password"
               className="auth-input"
+              onChange={handleChange} // ✅ Fix
+              required
             />
             <button type="submit" className="auth-button">
               Register
