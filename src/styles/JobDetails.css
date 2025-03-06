@@ -1,0 +1,76 @@
+.job-details-card {
+    width: 100%;
+    background-color: var(--color-background-gray);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100%; /* Tämä pitää komponentin täysikokoisena */
+}
+
+
+.job-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.job-details-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.job-company {
+    font-size: 16px;
+    color: var(--color-text-gray);
+}
+
+.job-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+    max-width: 100%; /* Käyttää koko oikean puolen */
+}
+
+.job-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.job-tag {
+    background-color: #ff5733;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.apply-button {
+    margin-top: 15px;
+    background-color: var(--color-orange);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Tekee napista koko oikean puolen levyisen */
+}
+
+.apply-button:hover {
+    background-color: var(--color-primary-dark);
+}
+.job-details-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #aaa;
+    background-color: var(--color-box-bg);
+    border-radius: 10px;
+}
+
