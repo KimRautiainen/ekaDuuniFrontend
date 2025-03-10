@@ -13,7 +13,8 @@ DevStart is a platform designed to **help junior developers** connect with poten
 - **Frontend:** React, Vite
 - **Backend:** Node.js, Express.js
 - **Database:** MYSQL
-- **Hosting:** Vercel (Frontend), TBD (Backend)
+- **Database Hosting:** Azure database
+- **Hosting:** Vercel (Frontend), Render (Backend)
 
 
 ## ⚙ Installation Guide
