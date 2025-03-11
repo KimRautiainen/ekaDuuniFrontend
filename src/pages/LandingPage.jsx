@@ -2,24 +2,24 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar"; // Import Navbar
 import "./LandingPage.css";
 import logo from "../assets/devstart.svg";
+
 import person1 from "../assets/images/profilePic1.jpg";
 import person2 from "../assets/images/profilePic2.jpg";
 import person3 from "../assets/images/profilePic3.jpg";
+import elisaLogo from "../assets/images/elisa-logo.jpg";
+import metropoliaLogo from "../assets/images/metropolia-logo.png";
 import { useState, useEffect } from "react";
 
 // Dummy job data
 const jobListings = [
-  { id: 1, title: "Frontend Developer", company: "Elisa", location: "Helsinki" },
-  { id: 2, title: "Full Stack Developer", company: "Metropolia", location: "Espoo" },
-  { id: 3, title: "Junior Backend Developer", company: "Futurice", location: "Tampere" },
-  { id: 4, title: "React Native Developer", company: "Reaktor", location: "Helsinki" },
-  { id: 5, title: "DevOps Engineer", company: "Nordcloud", location: "Oulu" },
+  { id: 1, title: "Java-kehittäjä", company: "Metropolia", location: "Helsinki", date: "Julkaistu 5.2.", salary: "€", tags: ["JAVA", "JS"], logo: elisaLogo},
+  { id: 2, title: "Frontend Developer", company: "Elisa", location: "Helsinki", date: "Julkaistu 6.2.", salary: "€", tags: ["React", "CSS"], logo: metropoliaLogo },
+  { id: 3, title: "Full Stack Developer", company: "Futurice", location: "Tampere", date: "Julkaistu 8.2.", salary: "€", tags: ["Node.js", "MongoDB"] },
 ];
-
 
 const LandingPage = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState(jobListings);
 
   useEffect(() => {
     fetch("/api/jobs") // Vaihda API:n osoite oikeaksi
@@ -67,9 +67,18 @@ const LandingPage = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {jobListings.concat(jobListings).map((job, index) => (
+            {jobs.concat(jobs).map((job, index) => (
               <div key={index} className="job-item">
-                <strong>{job.title}</strong> - {job.company}, {job.location}
+                <img src={job.logo} alt={job.company} className="job-logo" />
+                <div className="job-info">
+                  <strong>{job.title}</strong> - {job.company}, {job.location}
+                  <p>{job.date}</p>
+                  <div className="job-tags">
+                    {job.tags && job.tags.map((tag, idx) => (
+                      <span key={idx} className="job-tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
