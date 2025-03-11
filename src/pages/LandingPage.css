@@ -152,46 +152,43 @@
 }
   
 /* Technology Carousel */
-.technology-carousel {
-  margin-top: 144px;
-  
-  font-weight: 400;
-  text-align: center;
+.job-carousel {
   width: 100%;
   overflow: hidden;
-  white-space: nowrap;
   position: relative;
+  white-space: nowrap;
+  margin-top: 30px;
 }
 
 
 
 /* Scrolling Effect */
-.technology-list {
+.job-list {
   display: flex;
-  gap: 1rem;
-  animation: scroll 15s linear infinite;
+  gap: 1.5rem;
   width: max-content;
+  animation: scroll 25s linear infinite; /* Hidastettu */
 }
 
 /* Hover Effect to Slow Down */
-.technology-list.paused {
+.job-list.paused {
   animation-play-state: paused;
 }
 
-.technology-item {
+.job-item {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   background-color: var(--color-background-gray);
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 10px;
-  color: var(--color-text-gray);
+  color: var(--color-text-light);
   font-weight: bold;
   font-size: 18px;
-  transition: transform 0.2s ease-in-out;
-  width: 150px;
-
+  min-width: 250px;
+  height: 50px;
+  white-space: nowrap;
 }
 
 /* Icons inside items */
