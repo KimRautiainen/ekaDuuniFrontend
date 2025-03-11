@@ -1,13 +1,38 @@
+.job-details-container {
+    display: flex;
+    background: #0F0F0F;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    gap: 20px;
+    padding: 20px;
+    min-height: 80vh;
+    align-items: flex-start;
+}
+.job-details {
+    background: #0F0F0F;
+    width: 50%;
+    background-color: var(--color-box-bg);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    min-height: 100%; /* Tämä pitää komponentin täysikokoisena */
+}
+
+
 .job-details-card {
     width: 100%;
-    background-color: var(--color-background-gray);
+    background: #0F0F0F;
     padding: 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    min-height: 100%; /* Tämä pitää komponentin täysikokoisena */
+    min-width: 600px;
+    max-width: 1200px;
 }
 
 

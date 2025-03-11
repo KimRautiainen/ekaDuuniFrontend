@@ -1,7 +1,7 @@
 .job-card {
     display: flex;
     align-items: center; /* Asetetaan sisältö keskitetysti */
-    background-color: var(--color-box-bg);
+    background: #0F0F0F;
     color: var(--color-text-light);
     border-radius: 10px;
     padding: 16px;
