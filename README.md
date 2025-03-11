@@ -4,7 +4,7 @@
 DevStart is a platform designed to **help junior developers** connect with potential employers. It simplifies the job search process by allowing junior devs to showcase their skills effectively, ensuring they stand out to hiring companies.
 
 ## 🔗 Related Links
-- 🎨 **Figma Design:** [View on Figma](https://www.figma.com/proto/ZXeKPPJ9FZtJ5y1X60eXOs/Ekan-duunin-kohtauspaikka?node-id=3-27&t=pBFX5PkYAGt7ARGt-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=33%3A97&show-proto-sidebar=1)
+- 🎨 **Figma Design:** [View on Figma](https://www.figma.com/design/UAHUcRIGVAK4BsmCi1CnuR/Ekan-duunin-kohtauspaikka---DevStart?node-id=0-1&t=ybNmpuX0lHHJIFSP-1)
 - 📊 **Miro Database Schema:** [View on Miro](https://miro.com/app/board/uXjVIf6A9SU=/)
 - 🌐 **Live Website (Vercel):** [DevStart App](https://eka-duuni-frontend-kim-rautiainens-projects.vercel.app/)
 - 💾 **Backend Repository:** [GitHub Backend Repo](https://github.com/KimRautiainen/ekaDuuniBackend)
