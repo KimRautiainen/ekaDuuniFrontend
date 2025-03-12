@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import "./Login.css";
-import googleLogo from "../../assets/web_light_rd_ctn.svg"; // Use your downloaded SVG logo
+import googleLogo from "../../assets/web_light_rd_ctn.svg"; // Google logo
+import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from "react-icons/ai";
+import DevStartLogo from "../../components/DevStartLogo";
 
 const Login = () => {
   const { login, register } = useContext(AuthContext);
@@ -12,7 +14,7 @@ const Login = () => {
   });
   const [isRegistering, setIsRegistering] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState(""); // Track login errors
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,9 +22,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    console.log("Submitting form:", formData); // ✅ Debugging
-
     if (
       !formData.email ||
       !formData.password ||
@@ -31,23 +30,17 @@ const Login = () => {
       setError("Please fill in all fields.");
       return;
     }
-
     setError("");
-    console.log(isRegistering ? "Registering..." : "Logging in..."); // ✅ Debugging
     if (isRegistering) {
-      console.log("Calling register function..."); // ✅ Debugging
       const success = await register(formData);
-      console.log("Register function response:", success); // ✅ Debugging
       if (!success) {
         setError("Registration failed. Try again.");
       }
     } else {
-      console.log("Calling login function..."); // ✅ Debugging
       const success = await login({
         email: formData.email,
         password: formData.password,
       });
-      console.log("Login function response:", success); // ✅ Debugging
       if (!success) {
         setError("Invalid email or password.");
       }
@@ -58,38 +51,52 @@ const Login = () => {
     <div className="auth-container">
       {/* Left Side - Image and Welcome Text */}
       <div className="auth-image">
-        <h1>Welcome Back</h1>
+        <h1 className="welcome-header">Welcome back</h1>
       </div>
+
+      {/* Top Right Logo */}
+      <DevStartLogo />
 
       {/* Right Side - Login / Register Form */}
       <div className="auth-form-container">
         {isRegistering ? (
           <form onSubmit={handleSubmit} className="auth-form">
-            <h2>Register</h2>
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full Name"
-              className="auth-input"
-              onChange={handleChange} // ✅ Fix: Ensure input updates formData
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="auth-input"
-              onChange={handleChange} // ✅ Fix
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="auth-input"
-              onChange={handleChange} // ✅ Fix
-              required
-            />
+            <h1 className="login-header">Register</h1>
+            <div className="input-container">
+              <AiOutlineUser className="input-icon" />
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Full Name"
+                className="auth-input"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="input-container">
+              <AiOutlineMail className="input-icon" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="auth-input"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="input-container">
+              <AiOutlineLock className="input-icon" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="auth-input"
+                onChange={handleChange}
+                required
+              />
+            </div>
             <button type="submit" className="auth-button">
               Register
             </button>
@@ -111,25 +118,32 @@ const Login = () => {
           </form>
         ) : (
           <form onSubmit={handleSubmit} className="auth-form">
-            <h2>Log In</h2>
-            {error && <p className="auth-error">{error}</p>}{" "}
-            {/* Display error if exists */}
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="auth-input"
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="auth-input"
-              onChange={handleChange}
-              required
-            />
+            <h1 className="login-header">Log In</h1>
+            {error && <p className="auth-error">{error}</p>}
+
+            <div className="input-container">
+            <AiOutlineMail className="input-icon" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="auth-input"
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="input-container">
+            <AiOutlineLock className="input-icon" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="auth-input"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
             <div className="auth-options">
               <label className="remember-me">
                 <input
@@ -140,21 +154,24 @@ const Login = () => {
                 Remember me
               </label>
             </div>
+
             <button type="submit" className="auth-button">
               Login
             </button>
+
             {/* Separator */}
             <div className="auth-separator">
               <span>or</span>
             </div>
-            {/* Google Login */}
-            <button type="button" className="google-button">
-              <img src={googleLogo} alt="Google logo" className="google-logo" />
-            </button>
             <p className="auth-toggle">
               Don't have an account yet?{" "}
               <span onClick={() => setIsRegistering(true)}>Register</span>
             </p>
+            {/* Google Login */}
+            <button type="button" className="google-button">
+              <img src={googleLogo} alt="Google logo" className="google-logo" />
+            </button>
+
           </form>
         )}
       </div>

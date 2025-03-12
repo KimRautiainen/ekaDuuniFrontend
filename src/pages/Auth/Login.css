@@ -3,6 +3,23 @@
   display: flex;
   height: 100vh;
   width: 100vw;
+  background: rgba(0, 0, 0, 1)
+}
+.welcome-header {
+  position: absolute;
+  width: 256px;
+  height: 106px;
+  top: 150px;
+  left: 62px;
+  color: #FFF;
+
+text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+font-family: Inter;
+font-size: 48px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.96px;
 }
 
 /* Left Side - Image Section */
@@ -23,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgba(250, 250, 250, 1)
 }
 
 /* Form */
@@ -33,6 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .auth-form h2 {
@@ -43,25 +61,31 @@
 /* Input Fields */
 .auth-input {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 14px 14px 14px 50px; /* Space for the icon */
+  margin-top: 20px;
   font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #FFF;
 }
-
 /* Auth Buttons */
+/* Register Button */
 .auth-button {
-  width: 100%;
-  background: #2563eb;
+  width: 70%;
+  background: rgba(243, 121, 76, 1);
   color: white;
-  padding: 12px;
+  padding: 14px; /* Match input padding */
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 30px; /* Ensure same spacing */
   transition: background 0.2s ease-in-out;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
 }
 
 .auth-button:hover {
@@ -70,34 +94,36 @@
 
 /* Separator (or line with 'or') */
 .auth-separator {
-  width: 100%;
   display: flex;
   align-items: center;
-  margin: 15px 0;
-}
-
-.auth-separator span {
-  flex-grow: 1;
-  text-align: center;
-  color: #888;
-  font-size: 14px;
+  width: 100%;
+  margin: 30px 0;
   position: relative;
 }
 
-.auth-separator span::before,
-.auth-separator span::after {
+.auth-separator span {
+  flex-grow: 0;
+  padding: 0 10px;
+  color: #888;
+  font-size: 14px;
+  background: #fafafa; /* Match form background */
+  position: relative;
+  z-index: 2;
+}
+
+/* Separator line */
+.auth-separator::before,
+.auth-separator::after {
   content: "";
   flex-grow: 1;
   height: 1px;
   background: #ddd;
-  display: block;
-  position: relative;
-  top: 50%;
 }
 
 
 /* Google Button - Clickable */
 .google-button {
+  margin-top: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -128,27 +154,86 @@
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .remember-me {
   display: flex;
   align-items: center;
   gap: 5px;
+  color: #000;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
 }
 
 /* Register/Login Toggle */
 .auth-toggle {
-  margin-top: 15px;
-  font-size: 0.9rem;
+  margin-top: 20px;
+  color: #000;
+font-family: Inter;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.48px;
 }
 
 .auth-toggle span {
-  color: #2563eb;
-  cursor: pointer;
-  font-weight: bold;
+  color: #00E;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.48px;
 }
 
 .auth-toggle span:hover {
   text-decoration: underline;
+}
+.login-header {
+  position: absolute; /* Ensure it respects the top value */
+  top: 180px;
+  left: 75%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  color: #000;
+  font-family: Inter, sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.8px;
+  text-align: center;
+}
+/* Input Container */
+.input-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+/* Input Icons */
+.input-icon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 26px;
+  height: auto;
+  left: 0;
+  padding: 0 10px;
+  top: 63%;
+  transform: translateY(-50%);
+  color: #000;
+
+}
+/* Placeholder Styles */
+.auth-input::placeholder {
+  font-family: Inter; /* Apply Figma's font */
+  font-size: 16px;  /* Adjust size */
+  font-style: normal; /* Keep it non-italic */
+  font-weight: 400; /* Regular weight */
+  color: #000;
+  letter-spacing: -0.48px;
+  line-height: normal;
 }
