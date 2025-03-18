@@ -1,0 +1,14 @@
+.devstart-logo {
+    position: absolute;
+    top: 63px;
+    left: 112px;
+    width: 117px;
+    height: 23px;
+    color: #FFF;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    line-height: normal;
+    white-space: nowrap;
+  }
