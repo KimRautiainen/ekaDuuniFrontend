@@ -186,11 +186,12 @@
 
 
 /* Scrolling Effect */
-.job-list {
+.job-carousel-list {
   display: flex;
+  flex-direction: row;
   gap: 1.5rem;
   width: max-content;
-  animation: scroll 25s linear infinite; 
+  animation: scroll 25s linear infinite;
 }
 
 /* Hover Effect to Slow Down */
