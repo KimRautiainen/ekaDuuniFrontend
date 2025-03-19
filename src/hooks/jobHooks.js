@@ -1,23 +1,9 @@
 import axios from "axios";
 import { apiUrl } from "../utils/app-config";
+import { getAuthConfig } from "../utils/auth-config";
 
 const useJobs = () => {
   const jobUrl = `${apiUrl}jobs`;
-
-  // ✅ Helper function to get token dynamically (avoiding stale token issues)
-  const getAuthConfig = () => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-      console.error("❌ No authentication token found!");
-      return null;
-    }
-    return {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    };
-  };
 
   // ✅ Get all jobs
   const getJobs = async () => {
