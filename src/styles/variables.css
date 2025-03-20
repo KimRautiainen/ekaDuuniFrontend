@@ -1,7 +1,5 @@
-/* variables.css */
-
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:wght@400;500&display=swap');
 
 /* Global Variables */
 :root {
@@ -10,23 +8,31 @@
   --font-secondary: 'Roboto', sans-serif;
 
   /* Font Sizes */
+  --font-size-xs: 12px;
   --font-size-small: 14px;
   --font-size-base: 16px;
   --font-size-large: 18px;
   --font-size-heading: 24px;
+  --font-size-xl: 28px;
 
   /* Font Weights */
   --font-weight-light: 300;
-  --font-weight-normal: 400;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-weight-bold: 600;
 
   /* Line Heights */
-  --line-height-base: 19.36px;
+  --line-height-xs: 14px;
+  --line-height-small: 18px;
+  --line-height-base: 20px;
+  --line-height-large: 24px;
   --line-height-heading: 28px;
+  --line-height-xl: 32px;
 
   /* Letter Spacing */
-  --letter-spacing-small: -0.02em;
+  --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
 
   /* Colors */
   --color-primary: #2563eb; /* Blue */
@@ -37,7 +43,36 @@
   --color-orange: #F3794C; /* Orange */
   --color-background: #0F0F0F; /* Dark background */
   --color-background-gray: #232323; /* Gray background */
-  --color-box-bg: rgba(255, 255, 255, 0.07); 
+  --color-box-bg: rgba(255, 255, 255, 0.07);
   
+  /* Gradients */
+  --color-gradient-primary: linear-gradient(90deg, #4CC9F0 0%, #2C748A 100%);
+}
 
+/* Typography Classes */
+.text-title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-light);
+}
+
+.text-subtitle {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-small);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-gray);
+}
+
+.text-body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-small);
+  letter-spacing: var(--letter-spacing-normal);
+  color: var(--color-text-light);
 }

@@ -1,46 +1,148 @@
+@import '../styles/variables.css';
 .Carousel-job-card {
     display: flex;
     align-items: center;
-    background-color: var(--color-background-gray);
-    padding: 0.8rem 1.5rem;
+    width: 330px;
+    height: 93px;
     border-radius: 10px;
-    color: var(--color-text-light);
-    font-weight: bold;
-    font-size: 18px;
-    max-width: 280px;
-    min-height: 120px;
-    white-space: nowrap;
-    border: 1px solid #444;
-    transition: transform 0.2s ease-in-out;
+    background: rgba(35, 35, 35, 1.0);
+    padding: 10px;
+    color: rgba(255, 255, 255, 1);
+    gap: 10px;
 }
 
-.Carousel-job-card:hover {
-    transform: scale(1.05);
+/* Job Image */
+.Carousel-job-card-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    background: #1e1e1e;
 }
 
 .Carousel-job-card-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    border-radius: 10px;
-    margin-right: 10px;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
-.Carousel-job-card-info {
+/* Job Details */
+.Carousel-job-card-content {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    width: 100%;
 }
 
+/* Title, Salary & Tags (First Row) */
+.Carousel-job-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    min-height: 22px; /* Ensure spacing */
+}
+
+.Carousel-job-card-title {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-base);
+    line-height: 120%;
+    letter-spacing: -2%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px; /* Prevents title from pushing content */
+    flex-shrink: 1;
+}
+
+.Carousel-job-card-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.Carousel-job-card-salary-icon {
+    display: flex;
+    width: 8.33px;
+    height: 8.37px;
+    color: white;
+}
+
+/* Skills */
 .Carousel-job-card-tags {
     display: flex;
-    gap: 5px;
+    gap: 4px;
+    flex-wrap: nowrap;
 }
 
 .Carousel-job-card-tag {
-    background-color: #ff5733;
-    color: white;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    background: linear-gradient(90deg, #4CC9F0 0%, #2C748A 100%);
+
+    color: rgba(255, 255, 255, 1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    max-width: 40px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Employer Name (Second Row) */
+.Carousel-job-card-subtitle {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
     font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 5px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 4px; /* Add spacing */
+}
+
+/* Location & Announcement Date (Third Row) */
+.Carousel-job-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 6px; /* Add spacing */
+}
+
+.Carousel-job-card-location {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 1);
+}
+
+.Carousel-job-card-location-icon {
+    margin-right: 5px;
+}
+
+.Carousel-job-card-date {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    color: rgba(255, 255, 255, 1);
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
 }
