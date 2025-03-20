@@ -3,6 +3,8 @@ import Login from "./pages/Auth/Login";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LandingPage from "./pages/LandingPage";
+import JobAdCreating from "./pages/JobAdCreating";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route path="/jobadcreating" element={<JobAdCreating />} />
     </Routes>
   );
 }

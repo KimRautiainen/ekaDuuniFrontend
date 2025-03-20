@@ -1,0 +1,126 @@
+.navbar2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111111;
+    padding: 10px 10px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 63px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+    
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: var(--color-text-light)
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    position: absolute; /* Asettaa linkit navbarin absoluuttiseen keskikohtaan */
+    left: 50%; /* Siirtää keskelle vaakasuunnassa */
+    transform: translateX(-50%);
+    gap: 88px;
+    font-size: 15px;
+    
+    
+  }
+  
+  .nav-links li {
+    margin: 0 10px;
+    
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    
+    color: var(--color-text-light)
+   
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    padding-right: 80px;
+    gap: 22px;
+  }
+  
+  .icon {
+    width: 15px;
+    height: 15px;
+    object-fit: contain; /* Varmistaa, ettei kuva veny */
+    margin: 0 10px;
+    cursor: pointer;
+    color: var(--color-text-light)
+  }
+  
+  .user-img {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 0.5px solid #898989;
+    object-fit: cover;
+    margin-left: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .highlight {
+    color: #F3794C;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      width: 100%;
+      padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .nav-links.open {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  .search-input {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    width: 150px;
+    margin-right: -55px;
+    background-color: #111111;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    color: white;
+  }
+  
+  .search-input:focus {
+    width: 200px;
+  }
