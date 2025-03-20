@@ -1,0 +1,30 @@
+.job-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    margin-top: 30px;
+  }
+  
+  .job-carousel-list {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+  }
+  
+  .job-carousel-list.paused {
+    animation-play-state: paused;
+  }
+  
+  /* Keyframes for scrolling */
+  @keyframes scroll {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-45%);
+    }
+  }
+  

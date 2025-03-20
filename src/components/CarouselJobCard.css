@@ -1,0 +1,46 @@
+.Carousel-job-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-background-gray);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    color: var(--color-text-light);
+    font-weight: bold;
+    font-size: 18px;
+    max-width: 280px;
+    min-height: 120px;
+    white-space: nowrap;
+    border: 1px solid #444;
+    transition: transform 0.2s ease-in-out;
+}
+
+.Carousel-job-card:hover {
+    transform: scale(1.05);
+}
+
+.Carousel-job-card-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.Carousel-job-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Carousel-job-card-tags {
+    display: flex;
+    gap: 5px;
+}
+
+.Carousel-job-card-tag {
+    background-color: #ff5733;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 5px;
+}

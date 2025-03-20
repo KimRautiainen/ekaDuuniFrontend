@@ -8,9 +8,8 @@ const useJobs = () => {
   // ✅ Get all jobs
   const getJobs = async () => {
     try {
-      const config = getAuthConfig();
-      if (!config) return null;
-      const response = await axios.get(jobUrl, config);
+      
+      const response = await axios.get(jobUrl);
       return response.data;
     } catch (error) {
       console.error("Error fetching jobs:", error.response?.data || error);
