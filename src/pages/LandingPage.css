@@ -1,233 +1,172 @@
-/* LandingPage.css */
 @import '../styles/variables.css';
 
 .landing-container {
-    min-height: 100vh;
-    width: 100vw;  /* Full viewport width */
-    background-color: var(--color-background); /* Dark background */
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
-  }
-  
-  .landing-logo {
+  min-height: 100vh;
+  width: 100vw; /* Full viewport width */
+  max-width: 100%; /* Ensures it does not exceed screen width */
+  background-color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+/* Add this to ensure body/html does not exceed screen width */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.landing-logo {
     width: 872px;
     height: 240px;
     margin-left: 80px;
     margin-top: 220px;
-  }
-  .landing-title{
+}
+
+.landing-title {
     color: var(--color-text-light);
     font-family: var(--font-primary);
     font-size: 65px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
     letter-spacing: -1.3px;
     margin-top: -50px;
     margin-left: 189px;
-  }
-  .landing-subtitle{
+}
+
+.landing-subtitle {
     color: var(--color-text-gray);
     font-family: var(--font-primary);
     font-size: var(--font-size-heading);
-    font-style: normal;
     font-weight: var(--font-weight-normal);
-    line-height: normal;
     letter-spacing: -0.48px;
     margin-top: -39px;
     margin-left: 189px;
     width: 570px;
     height: 65px;
-  }
+}
+
 /* Search Bar */
 .search-bar {
-  display: flex;
-  align-items: center;
-  width: 586px;
-  height: 67px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: #232323;
-  margin-left: 189px;
-  overflow: hidden; /* Ensures no extra borders */
+    display: flex;
+    align-items: center;
+    width: 586px;
+    height: 67px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: #232323;
+    margin-left: 189px;
+    overflow: hidden; 
 }
 
-/* Input Field */
 .search-bar input {
-  flex-grow: 1; /* Makes input expand inside the search bar */
-  height: 100%;
-  padding: 0 1rem;
-  color: #AEAEAE;
-  font-family: Inter, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: -0.4px;
-  border: none;
-  background: transparent; /* Matches the search bar */
-  outline: none; /* Removes outline on focus */
+    flex-grow: 1;
+    height: 100%;
+    padding: 0 1rem;
+    color: #AEAEAE;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    border: none;
+    background: transparent; 
+    outline: none; 
 }
 
-/* Search Button */
 .search-bar button {
-  width: 193px;
-  height: 100%; /* Make button take full height */
-  border: none; /* Remove button border */
-  background: #F3794C; /* Button background */
-  cursor: pointer;
-  color: #FFF;
-  font-family: Inter, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-align: center; /* Center the text */
-  white-space: nowrap; /* Prevent text from wrapping */
-  padding: 0 1rem; /* Add padding for better spacing */
-  letter-spacing: -0.4px;
-  border-radius: 10px 10px 10px 10px; /* Rounded right corners only */
-  transition: background 0.2s ease-in-out;
+    width: 193px;
+    height: 100%;
+    border: none;
+    background: #F3794C;
+    cursor: pointer;
+    color: #FFF;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap; 
+    padding: 0 1rem;
+    letter-spacing: -0.4px;
+    border-radius: 10px;
+    transition: background 0.2s ease-in-out;
 }
 
 .search-bar button:hover {
-  background: #e36439; /* Slightly darker orange on hover */
+    background: #e36439;
 }
 
 /* Job Seeker & Job Posting Indicator */
 .job-indicator {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-left: 189px;
-  margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 189px;
+    margin-top: 20px;
 }
 
-/* Horizontally Aligned Images */
 .job-images {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .job-image {
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  border: 2px solid white;
-  transition: transform 0.2s ease-in-out;
-  position: relative;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: 2px solid white;
+    transition: transform 0.2s ease-in-out;
+    position: relative;
 }
 
-/* Adjust positions and slight overlapping */
+/* Adjust positions */
 .job-image-1 {
-  z-index: 3;
-  left: 0;
+    z-index: 3;
+    left: 0;
 }
 
 .job-image-2 {
-  z-index: 2;
-  margin-left: -10px; /* Slight horizontal overlap */
+    z-index: 2;
+    margin-left: -10px; 
 }
 
 .job-image-3 {
-  z-index: 1;
-  margin-left: -10px; /* Slight horizontal overlap */
+    z-index: 1;
+    margin-left: -10px;
 }
 
-/* Job Seeker & Posting Text */
 .job-info {
-  display: flex;
-  gap: 1.5rem;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .job-seekers, .job-postings {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--color-text-light);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-  
-/* Technology Carousel */
-.technology-carousel {
-  margin-top: 144px;
-  
-  font-weight: 400;
-  text-align: center;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text-light);
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-
-
-/* Scrolling Effect */
-.technology-list {
-  display: flex;
-  gap: 1rem;
-  animation: scroll 15s linear infinite;
-  width: max-content;
-}
-
-/* Hover Effect to Slow Down */
-.technology-list.paused {
-  animation-play-state: paused;
-}
-
-.technology-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: var(--color-background-gray);
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  color: var(--color-text-gray);
-  font-weight: bold;
-  font-size: 18px;
-  transition: transform 0.2s ease-in-out;
-  width: 150px;
-
-}
-
-/* Icons inside items */
-.technology-item svg {
-  width: 40px;
-  height: 40px;
-}
-
-/* Keyframes for auto-scrolling */
-@keyframes scroll {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-  .info-section {
+.info-section {
     margin-top: 3rem;
     padding: 1.5rem;
     max-width: 700px;
     background-color: #2d3748;
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .info-section h2 {
+}
+
+.info-section h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .info-section p {
+}
+
+.info-section p {
     color: #a0aec0;
-  }
-  
-  .jobs-link {
+}
+
+.jobs-link {
     margin-top: 2rem;
     background-color: #10b981;
     padding: 0.75rem 1.5rem;
@@ -236,5 +175,4 @@
     font-weight: bold;
     color: white;
     display: inline-block;
-  }
-  
+}

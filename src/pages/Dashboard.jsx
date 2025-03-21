@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import AuthContext, { AuthProvider } from "../store/AuthContext";
+import AuthContext from "../contexts/AuthContext";
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
