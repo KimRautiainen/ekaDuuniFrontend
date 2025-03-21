@@ -37,7 +37,7 @@ const Navbar = () => {
       {/* Center Box with Links */}
       <div className="navbar-center-box">
         <NavLink to="/" className="navbar-link">Etusivu</NavLink>
-        <NavLink to="/about" className="navbar-link">Tietoa meistä</NavLink>
+        <NavLink to="/jobadcreating" className="navbar-link">Tietoa meistä</NavLink>
         <NavLink to="/services" className="navbar-link">Jotain muuta</NavLink>
         <NavLink to="/contact" className="navbar-link">Jotain muuta</NavLink>
       </div>
