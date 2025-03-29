@@ -32,12 +32,12 @@ const useJobs = () => {
   };
 
   // ✅ Create a new job
-  const createJob = async (job) => {
-    if (!job) return console.error("❌ Missing job data.");
+  const createJob = async (jobFormData) => {
+    if (!jobFormData) return console.error("❌ Missing job data.");
     try {
-      const config = getAuthConfig();
+      const config = getAuthConfig(true); // indicate FormData/multipart
       if (!config) return null;
-      const response = await axios.post(jobUrl, job, config);
+      const response = await axios.post(jobUrl, jobFormData, config);
       return response.data;
     } catch (error) {
       console.error("Error creating job:", error.response?.data || error);

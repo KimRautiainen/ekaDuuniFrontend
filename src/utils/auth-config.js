@@ -1,5 +1,5 @@
 // ✅ Helper function to get token dynamically (avoiding stale token issues)
-export const getAuthConfig = () => {
+export const getAuthConfig = (isMultipart = false) => {
   const token = localStorage.getItem("token");
 
   if (!token) {
@@ -9,7 +9,9 @@ export const getAuthConfig = () => {
 
   return {
     headers: {
-      "Content-Type": "application/json",
+      ...(isMultipart
+        ? {} // Let axios set Content-Type automatically for multipart
+        : { "Content-Type": "application/json" }),
       Authorization: `Bearer ${token}`,
     },
   };
