@@ -2,6 +2,7 @@ import { useState } from "react";
 import useJobs from "../hooks/jobHooks";
 import "./JobAdCreating.css";
 import Navbar2 from "../components/Navbar2";
+import RichTextEditor from "../components/RichTextEditor";
 
 const JobAdCreating = () => {
   const { createJob } = useJobs();
@@ -41,7 +42,7 @@ const JobAdCreating = () => {
   };
   const handleSubmit = async () => {
     const formData = new FormData();
-  
+
     formData.append("title", form.title);
     formData.append("company", form.company);
     formData.append("location", form.location);
@@ -55,17 +56,21 @@ const JobAdCreating = () => {
     formData.append("salary_details", form.salary_details);
     formData.append("job_description", form.job_description);
     formData.append("apply_type", form.apply_type);
-    formData.append("skills", JSON.stringify(
-      form.skills
-        .split(",")
-        .map((s) => s.trim())
-        .filter((s) => s)
-    ));
-  
+    formData.append(
+      "skills",
+      JSON.stringify(
+        form.skills
+          .split(",")
+          .map((s) => s.trim())
+          .filter((s) => s)
+      )
+    );
+
     // Append actual image files (not blob URLs!)
     if (form.logoFile) formData.append("logo", form.logoFile);
-    if (form.posterImageFile) formData.append("poster_image", form.posterImageFile);
-  
+    if (form.posterImageFile)
+      formData.append("poster_image", form.posterImageFile);
+
     const result = await createJob(formData);
     if (result) alert("Job created successfully!");
     else alert("Failed to create job.");
@@ -189,12 +194,15 @@ const JobAdCreating = () => {
 
           <div className="job-description-section">
             <h3>Ilmoituksen sisältö</h3>
-            <textarea
-              className="job-description-input"
-              name="job_description"
+            <p className="editor-tip">
+              Voit käyttää otsikoita, lihavointia ja listoja. Ei tarvitse osata
+              koodia.
+            </p>
+            <RichTextEditor
               value={form.job_description}
-              onChange={handleChange}
-              placeholder="Kuvaus..."
+              onChange={(value) =>
+                setForm((prev) => ({ ...prev, job_description: value }))
+              }
             />
           </div>
 
