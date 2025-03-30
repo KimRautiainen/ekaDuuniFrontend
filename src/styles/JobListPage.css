@@ -1,26 +1,11 @@
 body {
     background-color: #0F0F0F;
 }
-  
 .job-list-page {
-    background: #0F0F0F;
-   padding-top: 180px;
-   padding: 140px;
-    color: white;
-    align-items: center;
-}
-
-.search-bar {
-    background: #0F0F0F;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.job-list {
-    background: #0F0F0F;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: baseline; /* Keskitä listan sisältö */
-}
+    background-color: #0F0F0F;
+    min-height: 100vh;
+    padding: 120px 32px 32px; /* Adjust as needed */
+    box-sizing: border-box;
+  }
