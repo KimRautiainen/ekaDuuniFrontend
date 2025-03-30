@@ -1,22 +1,26 @@
 @import '../styles/variables.css';
 
 .landing-container {
-  min-height: 100vh;
-  width: 100vw; /* Full viewport width */
-  max-width: 100%; /* Ensures it does not exceed screen width */
-  background-color: var(--color-background);
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+    min-height: 100vh;
+    width: 100vw;
+    /* Full viewport width */
+    max-width: 100%;
+    /* Ensures it does not exceed screen width */
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* Prevents unwanted horizontal scrolling */
 }
 
 /* Add this to ensure body/html does not exceed screen width */
-html, body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+html,
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .landing-logo {
@@ -58,7 +62,7 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.24);
     background: #232323;
     margin-left: 189px;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .search-bar input {
@@ -69,8 +73,8 @@ html, body {
     font-family: Inter, sans-serif;
     font-size: 20px;
     border: none;
-    background: transparent; 
-    outline: none; 
+    background: transparent;
+    outline: none;
 }
 
 .search-bar button {
@@ -83,7 +87,7 @@ html, body {
     font-family: Inter, sans-serif;
     font-size: 20px;
     text-align: center;
-    white-space: nowrap; 
+    white-space: nowrap;
     padding: 0 1rem;
     letter-spacing: -0.4px;
     border-radius: 10px;
@@ -94,11 +98,10 @@ html, body {
     background: #e36439;
 }
 
-/* Job Seeker & Job Posting Indicator */
 .job-indicator {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 5px;
     margin-left: 189px;
     margin-top: 20px;
 }
@@ -117,29 +120,30 @@ html, body {
     position: relative;
 }
 
-/* Adjust positions */
 .job-image-1 {
-    z-index: 3;
     left: 0;
 }
 
 .job-image-2 {
-    z-index: 2;
-    margin-left: -10px; 
+    margin-left: -10px;
 }
 
 .job-image-3 {
-    z-index: 1;
     margin-left: -10px;
 }
 
 .job-info {
-    padding-left: 15px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding-left: 10px;
 }
 
-.job-seekers, .job-postings {
+.job-info p {
+    margin: 0;
+}
+
+.job-seekers,
+.job-postings {
     font-size: 16px;
     font-weight: 500;
     color: var(--color-text-light);
@@ -148,24 +152,132 @@ html, body {
     gap: 5px;
 }
 
-.info-section {
-    margin-top: 3rem;
-    padding: 1.5rem;
-    max-width: 700px;
-    background-color: #2d3748;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Info Container – vain kolmen kuvan info-trio */
+.info-container {
+    background-color: #1f1f1f;
+    padding: 60px 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 40px;
 }
 
-.info-section h2 {
-    font-size: 1.5rem;
+.info-container h2 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.info-container p {
+    color: #a0aec0;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.info-trio {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.info-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #232323;
+    border-radius: 5px;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.image-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.info-ball {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.image-container img {
+    position: relative;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-item h3 {
+    color: #fff;
     margin-bottom: 0.5rem;
 }
 
-.info-section p {
-    color: #a0aec0;
+.info-item p {
+    color: #fff;
+    line-height: 1.4;
 }
 
+/* Footer Container – oma musta taustansa */
+.footer-container {
+    background-color: #000000;
+    padding: 60px 20px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footers-section {
+    display: flex;
+    flex-direction: row;
+    /* Vierekkäin */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.footerPic {
+    display: block;
+    width: 800px;
+    /* Voit säätää kokoa */
+    height: 450px;
+    /* Voit säätää kokoa */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* Voit vaihtaa centeriin, jos haluat */
+    color: #fff;
+    text-align: left;
+}
+
+.footer-text h2 {
+    margin: 0 0 1rem 0;
+}
+
+.testimonial p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Browse Jobs Link */
 .jobs-link {
     margin-top: 2rem;
     background-color: #10b981;
