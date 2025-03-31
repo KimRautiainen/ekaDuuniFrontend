@@ -1,6 +1,7 @@
 @import '../styles/variables.css';
 
 .landing-container {
+    position: relative;
     min-height: 100vh;
     width: 100vw;
     /* Full viewport width */
@@ -24,10 +25,46 @@ body {
 }
 
 .landing-logo {
+    position: relative;
     width: 872px;
     height: 240px;
     margin-left: 80px;
     margin-top: 220px;
+}
+.landing-man-container {
+    position: absolute;
+    /* Sijoittelu: 
+       Jos haluat kuvan lähelle tekstiä/logoa, 
+       voit käyttää esim. top ja left -arvoja. */
+    top: 220px;      /* Kokeile esim. 100px, 150px, tms. */
+    left: 900px;    /* Jos haluat sen oikealle; 
+                        vaihtoehtoisesti käytä left: 600px; tms. */
+    width: 600px;    /* Ympyrän/leiskan koko */
+    height: 600px;
+    z-index: 1;      /* Säädä tarvittaessa, jos haluat tekstin päälle tai alle */
+  }
+  .landing-man-circle {
+    position: absolute;
+    top: 0;
+    left: 100;
+    width: 100%; 
+    height: 100%;
+    border-radius: 50%;
+    background-color: #f0f0f0ed; /* Valkoinen ympyrä */
+    z-index: 1;
+  }
+
+  .manpc {
+   position: absolute;
+  /* Sijoita hieman ympyrän sisälle, jotta se on tasapainossa. */
+  top: 18px;   
+  right: 0px;
+  width: 680px;   /* Pikkuisen pienempi kuin 450px kontaineri, 
+                     jotta jää reunoille valkoista. */
+  height: auto;
+  z-index: 2;
+  /* Jos haluat kääntää kuvan vaakasuunnassa: */
+  transform: scaleX(-1);
 }
 
 .landing-title {
@@ -155,7 +192,7 @@ body {
 /* Info Container – vain kolmen kuvan info-trio */
 .info-container {
     background-color: #1f1f1f;
-    padding: 60px 20px;
+    padding: 60px 200px;
     border-radius: 20px;
     text-align: center;
     margin-top: 40px;
