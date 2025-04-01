@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchBar.css";
+import "./Searchbar.css";
 import { FaSearch } from "react-icons/fa";
 import { MdTune } from "react-icons/md"; // ⬅️ Right side icon
 
