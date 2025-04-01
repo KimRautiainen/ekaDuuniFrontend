@@ -1,390 +1,407 @@
 body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    
-  }
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   
-  .page-container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    background: #0F0F0F;
-    min-height: 100vh;
-  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background: #0F0F0F;
+  min-height: 100vh;
+}
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #0F0F0F;
-    border-radius: 8px;
-    text-align: center; 
-    margin-bottom: 20px;
-  }
-  .content-container {
-    display: flex;
-    flex: 1; /* Ota kaikki jäljellä oleva tila */
-    justify-content: flex-start; /* Keskittää sisällön vaakasuunnassa */
-    align-items: center; /* Keskittää sisällön pystysuunnassa */
-    padding: 80px 31px 31px; 
-    box-sizing: border-box;
-    flex-direction: column; /* Asettaa sisältö pystysuoraan */
-    width: 100%; /* Varmistaa, että container vie koko leveys */
-  }
-  .navbar2 {
-    position: fixed; /* Kiinnittää navbarin ylös */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 63px; /* Varmistaa, että navbar pysyy oikean kokoisena */
-    z-index: 1000;
-  }
-  h1, p {
-    padding: 14px;
-    width: 100%;
-    max-width: 500px; /* Sama leveys molemmille */
-    margin: 0 auto; /* Keskittää elementit */
-    display: block;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #0F0F0F;
+  border-radius: 8px;
+  text-align: center; 
+  margin-bottom: 20px;
+}
+.content-container {
+  display: flex;
+  flex: 1; /* Ota kaikki jäljellä oleva tila */
+  justify-content: flex-start; /* Keskittää sisällön vaakasuunnassa */
+  align-items: center; /* Keskittää sisällön pystysuunnassa */
+  padding: 80px 31px 31px; 
+  box-sizing: border-box;
+  flex-direction: column; /* Asettaa sisältö pystysuoraan */
+  width: 100%; /* Varmistaa, että container vie koko leveys */
+}
+.navbar2 {
+  position: fixed; /* Kiinnittää navbarin ylös */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 63px; /* Varmistaa, että navbar pysyy oikean kokoisena */
+  z-index: 1000;
+}
+h1, p {
+  padding: 14px;
+  width: 100%;
+  max-width: 500px; /* Sama leveys molemmille */
+  margin: 0 auto; /* Keskittää elementit */
+  display: block;
 }
 
 h1 {
-    color: #ffffff;
-    font-size: 32px; 
-    font-style: normal;
-    font-weight: 600; /* Tee otsikosta hieman paksumpi */
-    line-height: 1.2; /* Parempi tasapaino riviväliin */
-    letter-spacing: -0.64px;
-    margin-top: 50px;
+  color: #ffffff;
+  font-size: 32px; 
+  font-style: normal;
+  font-weight: 600; /* Tee otsikosta hieman paksumpi */
+  line-height: 1.2; /* Parempi tasapaino riviväliin */
+  letter-spacing: -0.64px;
+  margin-top: 50px;
 }
 
 h2 {
-    color: #FFF;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.48px;
-    margin-bottom: 10px; /* Lisää hieman tilaa ennen container-infoa */
-    text-align: left; /* Siirtää tekstin vasemmalle */
-    width: 100%; /* Varmistaa, että leveys on koko containerin mukainen */
-    max-width: 734px; /* Sama leveys kuin container-info */
-    margin-left: auto; /* Keskittää elementin vasemmalle */
-    margin-right: auto;
-    margin-top: 80px;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.48px;
+  margin-bottom: 10px; /* Lisää hieman tilaa ennen container-infoa */
+  text-align: left; /* Siirtää tekstin vasemmalle */
+  width: 100%; /* Varmistaa, että leveys on koko containerin mukainen */
+  max-width: 734px; /* Sama leveys kuin container-info */
+  margin-left: auto; /* Keskittää elementin vasemmalle */
+  margin-right: auto;
+  margin-top: 80px;
 }
 h3 {
-  font-size: 21px;
+font-size: 21px;
 }
 p1 {
-    color: #AEAEAE;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.6; /* Nostaa riviväliä, jotta teksti näyttää siistiltä */
-    letter-spacing: -0.24px;
-    word-wrap: break-word; /* Pitkät sanat katkeavat tarvittaessa */
-    white-space: normal; /* Sallii tekstin katkeamisen kahdelle riville */
+  color: #AEAEAE;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6; /* Nostaa riviväliä, jotta teksti näyttää siistiltä */
+  letter-spacing: -0.24px;
+  word-wrap: break-word; /* Pitkät sanat katkeavat tarvittaessa */
+  white-space: normal; /* Sallii tekstin katkeamisen kahdelle riville */
 }
-  .container-info {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(47, 47, 47, 0.25);
-    background: #0F0F0F;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
-    width: 60%; 
-    max-width: 734px; 
-    
-  }
+.container-info {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(47, 47, 47, 0.25);
+  background: #0F0F0F;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  width: 60%; 
+  max-width: 734px; 
   
-  .container-info h2 {
-    color: white;
-    margin-bottom: 20px;
-  }
-  
-  .input-container {
-    display: flex;
-    flex-wrap: wrap; /* Sallii elementtien siirtymisen riviltä toiselle pienemmillä näytöillä */
-    justify-content: flex-start; /* Kohdistaa vasemmalle */
-    align-items: flex-start;
-    gap: 40px; /* Lisää väliä kenttien välille */
-    width: 100%; /* Varmistaa, että leveys pysyy oikeana */
-    max-width: 700px; /* Sama leveys kuin container-info */
-}
-  .input-group {
-    flex: 1; /* Kentät jakavat tilan tasaisesti */
-    min-width: 220px; /* Vähimmäisleveys kentille */
-    margin-bottom: 14px; 
-    max-width: 330px; /* Asetetaan maksimi leveys, jotta ne eivät veny liikaa */
-
 }
 
-  /* Tekstikentän label-tyylit */
-  .input-group label {
-    color: white;
-    margin-bottom: 5px;
-    font-weight: bold;
+.container-info h2 {
+  color: white;
+  margin-bottom: 20px;
+}
 
-  }
-  .input-group label,
+.input-container {
+  display: flex;
+  flex-wrap: wrap; /* Sallii elementtien siirtymisen riviltä toiselle pienemmillä näytöillä */
+  justify-content: flex-start; /* Kohdistaa vasemmalle */
+  align-items: flex-start;
+  gap: 40px; /* Lisää väliä kenttien välille */
+  width: 100%; /* Varmistaa, että leveys pysyy oikeana */
+  max-width: 700px; /* Sama leveys kuin container-info */
+}
+.input-group {
+  flex: 1; /* Kentät jakavat tilan tasaisesti */
+  min-width: 220px; /* Vähimmäisleveys kentille */
+  margin-bottom: 14px; 
+  max-width: 330px; /* Asetetaan maksimi leveys, jotta ne eivät veny liikaa */
+
+}
+
+/* Tekstikentän label-tyylit */
+.input-group label {
+  color: white;
+  margin-bottom: 5px;
+  font-weight: bold;
+
+}
+.input-group label,
 .label-text {
-    display: block;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 5px;
-    text-align: left; /* Varmistaa, että tekstit ovat samassa linjassa */
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+  text-align: left; /* Varmistaa, että tekstit ovat samassa linjassa */
 }
-  /* Tekstikenttien tyylit */
-  .input-group input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid rgba(47, 47, 47, 0.25);
-    background: #1e1e1e;
-    color: white;
-    margin-top: 15px;
+/* Tekstikenttien tyylit */
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgba(47, 47, 47, 0.25);
+  background: #1e1e1e;
+  color: white;
+  margin-top: 15px;
 
-  }
-  
-  .input-group input::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  /* Työnantajan logo -osion tyyli */
+}
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+/* Työnantajan logo -osion tyyli */
 .logo-section {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .logo-section h3 {
-    font-size: 18px;
-    font-weight: 500;
-    color: white;
-    margin-bottom: 5px; /* Vähennä väliä otsikon ja laatikon välillä */
-    text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 5px; /* Vähennä väliä otsikon ja laatikon välillä */
+  text-align: left;
 }
 
 /* Pääcontainer logolle ja infotekstille */
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Vähennä väliä laatikon ja tekstin välillä */
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Vähennä väliä laatikon ja tekstin välillä */
 }
 
 /* Esikatselulaatikko */
 .logo-preview {
-    width: 126px;
-    height: 92px;
-    border: 1px dashed rgba(255, 255, 255, 0.5);
-    background-color: #1e1e1e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden; /* Estää kuvan ulostulon laatikosta */
-}
-
-
-/* Tekstikenttä logon vieressä */
-.logo-info {
-    color: #AEAEAE;
-    font-size: 12px;
-    line-height: 1.5;
-    max-width: 400px;
-}
-.logo-preview svg {
-    width: 30px;
-    height: 30px;
-    stroke: white;
-}
-.full-preview-image {
-    width: 100%; /* Täyttää koko laatikon leveyden */
-    height: 100%; /* Täyttää koko laatikon korkeuden */
-    object-fit: cover; /* Pitää mittasuhteet ja täyttää koko laatikon */
-}
-/* Ladattu kuva */
-.uploaded-image {
-    width: 30px; /* Kuva 30x30 px */
-    height: 30px;
-    object-fit: cover; /* Pitää kuvan suhteet kunnossa */
-    filter: brightness(0) invert(1); /* Muuttaa kuvan valkoiseksi */
-}
-
-/* Napit */
-.button-group {
-    display: flex;
-    margin-left: 15px;
-    margin-top: 5px; 
-    align-items: flex-start; /* Kohdistaa napit yläreunaan */
-    gap: 17px;
-}
-
-.upload-button,
-.delete-button {
-    padding: 10px 16px;
-    font-size: 14px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-}
-
-.upload-button {
-    background-color: #F3794C;
-    color: white;
-}
-
-.delete-button {
-    background-color: #F3794C;
-    color: white;
-}
-.optional-text {
-    color: #AEAEAE;
-    font-size: 10px;
-    font-weight: normal;
-}
-.block-text {
-    display: block;
-    margin-top: -3px; 
-}
-/* Ilmoituksen kuva */
-.ad-image-section {
-  margin-top: 30px;
-}
-
-.ad-image-section h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: white;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-/* Container kuvalle */
-.ad-image-container {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-}
-
-.ad-image-preview {
-  width: 252px;
-  height: 184px;
+  width: 126px;
+  height: 92px;
   border: 1px dashed rgba(255, 255, 255, 0.5);
   background-color: #1e1e1e;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; /* Estää kuvan ulostulon laatikosta */
 }
 
-.placeholder-text {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 14px;
+
+/* Tekstikenttä logon vieressä */
+.logo-info {
+  color: #AEAEAE;
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 400px;
+}
+.logo-preview svg {
+  width: 30px;
+  height: 30px;
+  stroke: white;
+}
+.full-preview-image {
+  width: 100%; /* Täyttää koko laatikon leveyden */
+  height: 100%; /* Täyttää koko laatikon korkeuden */
+  object-fit: cover; /* Pitää mittasuhteet ja täyttää koko laatikon */
+}
+/* Ladattu kuva */
+.uploaded-image {
+  width: 30px; /* Kuva 30x30 px */
+  height: 30px;
+  object-fit: cover; /* Pitää kuvan suhteet kunnossa */
+  filter: brightness(0) invert(1); /* Muuttaa kuvan valkoiseksi */
 }
 
+/* Napit */
 .button-group {
   display: flex;
-  margin-top: 5px;
-  align-items: flex-start;
+  margin-left: 15px;
+  margin-top: 5px; 
+  align-items: flex-start; /* Kohdistaa napit yläreunaan */
   gap: 17px;
 }
 
-.upload-button {
-  background-color: #F3794C;
-  color: white;
+.upload-button,
+.delete-button {
   padding: 10px 16px;
   font-size: 14px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
 }
+
+.upload-button {
+  background-color: #F3794C;
+  color: white;
+}
+
+.delete-button {
+  background-color: #F3794C;
+  color: white;
+}
+.optional-text {
+  color: #AEAEAE;
+  font-size: 10px;
+  font-weight: normal;
+}
+.block-text {
+  display: block;
+  margin-top: -3px; 
+}
+/* Ilmoituksen kuva */
+.ad-image-section {
+margin-top: 30px;
+}
+
+.ad-image-section h3 {
+font-size: 18px;
+font-weight: 500;
+color: white;
+margin-bottom: 5px;
+text-align: left;
+}
+
+/* Container kuvalle */
+.ad-image-container {
+display: flex;
+align-items: center;
+gap: 15px;
+width: 100%;
+}
+
+.ad-image-preview {
+width: 252px;
+height: 184px;
+border: 1px dashed rgba(255, 255, 255, 0.5);
+background-color: #1e1e1e;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+
+.placeholder-text {
+color: rgba(255, 255, 255, 0.5);
+font-size: 14px;
+}
+
+.button-group {
+display: flex;
+margin-top: 5px;
+align-items: flex-start;
+gap: 17px;
+}
+
+.upload-button {
+background-color: #F3794C;
+color: white;
+padding: 10px 16px;
+font-size: 14px;
+border-radius: 5px;
+cursor: pointer;
+border: none;
+}
 /* Yhtenäinen label-tyyli kaikille otsikoille */
 .label-text {
-  font-size: 16px; /* Sama kuin input-kenttien labelit */
-  font-weight: bold;
-  color: white;
-  margin-bottom: 5px;
+font-size: 16px; /* Sama kuin input-kenttien labelit */
+font-weight: bold;
+color: white;
+margin-bottom: 5px;
 }
 
 /* Poistetaan erilliset fontti-asetukset logo- ja ilmoituksen kuva -osioista */
 .logo-section h3,
 .ad-image-section h3 {
-  font-size: 16px; /* Sama koko kuin muut labelit */
-  font-weight: bold;
-  color: white;
-  margin-bottom: 5px;
+font-size: 16px; /* Sama koko kuin muut labelit */
+font-weight: bold;
+color: white;
+margin-bottom: 5px;
 }
 /* Ilmoituksen sisältö */
 .job-description-section {
-  margin-top: 30px;
-  width: 100%;
-  max-width: 710px; /* Sama leveys kuin container-info */
+margin-top: 30px;
+width: 100%;
+max-width: 710px; /* Sama leveys kuin container-info */
 }
 
 .job-description-section h3 {
-  font-size: 18px;
-  font-weight: 500;
-  color: white;
-  margin-bottom: 5px;
-  text-align: left;
+font-size: 18px;
+font-weight: 500;
+color: white;
+margin-bottom: 5px;
+text-align: left;
 }
 
 .job-description-input {
+width: 100%;
+height: 150px;
+border-radius: 5px;
+border: 1px solid rgba(47, 47, 47, 0.25);
+background: #1e1e1e;
+color: white;
+padding: 10px;
+font-size: 14px;
+resize: vertical;
+}
+
+.job-description-input::placeholder {
+color: rgba(255, 255, 255, 0.5);
+}
+.input-group {
+margin-top: 20px; /* Lisää väliä kenttien välille */
+width: 100%; /* Varmistaa, että kontti täyttää koko käytettävän tilan */
+max-width: 700px; /* Leventää tekstikentät */
+}
+
+.helper-text {
+font-size: 12px;
+color: #AEAEAE;
+margin-bottom: 5px;
+margin-top: -5px; /* Siirtää tekstiä hieman ylemmäs */
+margin-left: 0px; /* Varmistaa, että teksti on samalla tasolla vasemmalla */
+}
+input[type="date"] {
+color: white; /* Muuttaa tekstin valkoiseksi */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+filter: invert(1); /* Muuttaa ikonin valkoiseksi */
+cursor: pointer; /* Varmistaa, että käyttäjä voi klikata sitä */
+}
+.button-container {
+display: flex;
+justify-content: center; /* Keskittää napin */
+margin-top: 20px;
+}
+
+.submit-button {
+background-color: #F3794C; /* Sama väri kuin kuvien latausnapilla */
+color: white;
+padding: 12px 24px;
+font-size: 16px;
+font-weight: bold;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+background-color: #d8653e; /* Tummempi hover-efekti */
+} 
+.input-group select {
   width: 100%;
-  height: 150px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid rgba(47, 47, 47, 0.25);
   background: #1e1e1e;
   color: white;
-  padding: 10px;
+  margin-top: 15px;
   font-size: 14px;
-  resize: vertical;
+  font-family: Inter, sans-serif;
+  appearance: none; /* Optional: removes default arrow styling */
 }
 
-.job-description-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-.input-group {
-  margin-top: 20px; /* Lisää väliä kenttien välille */
-  width: 100%; /* Varmistaa, että kontti täyttää koko käytettävän tilan */
-  max-width: 700px; /* Leventää tekstikentät */
-}
-
-.helper-text {
-  font-size: 12px;
-  color: #AEAEAE;
-  margin-bottom: 5px;
-  margin-top: -5px; /* Siirtää tekstiä hieman ylemmäs */
-  margin-left: 0px; /* Varmistaa, että teksti on samalla tasolla vasemmalla */
-}
-input[type="date"] {
-  color: white; /* Muuttaa tekstin valkoiseksi */
-}
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1); /* Muuttaa ikonin valkoiseksi */
-  cursor: pointer; /* Varmistaa, että käyttäjä voi klikata sitä */
-}
-.button-container {
-  display: flex;
-  justify-content: center; /* Keskittää napin */
-  margin-top: 20px;
-}
-
-.submit-button {
-  background-color: #F3794C; /* Sama väri kuin kuvien latausnapilla */
-  color: white;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.submit-button:hover {
-  background-color: #d8653e; /* Tummempi hover-efekti */
+.input-group select:focus {
+  outline: none;
+  border-color: white; /* Optional focus color */
 }
