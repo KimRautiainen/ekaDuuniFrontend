@@ -5,15 +5,20 @@
   align-items: center;
   padding: 16px 24px;
   gap: 43px;
-  width: 673px;
-  height: 192px;
-  background: rgba(22, 22, 22, 0.25);
+  width: 723px;
+  height: 162px;
+  transition: background 0.2s ease;
   color: white;
   cursor: pointer;
   border: 1px solid #1d1d1d; /* Add this line for gray border */
-
+margin-left: -50px;
 }
-
+.large-job-card.active {
+  background: rgba(27, 27, 27, 0.4); 
+}
+.large-job-card:hover {
+  background: rgba(22, 22, 22, 0.4);
+}
 .large-job-card-logo-container {
   width: 109px;
   height: 105px;
@@ -22,7 +27,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  margin-left: 99px;
+  margin-left: 79px;
   
 }
 
@@ -30,6 +35,8 @@
   width: 100px;
   height: 100px;
   border-radius: 5px;
+  object-fit: cover;
+  background: white;
 }
 
 .large-job-card-content {
@@ -110,14 +117,47 @@
 }
 
 .large-job-card-description {
-    font-size: 12px;
+  max-height: 3.9em; /* esim. 3 riviä * 1.3em */
+  overflow: hidden;
+  position: relative;
+  font-size: 12px;
+  line-height: 1.3em;
+  color: #C8C8C8;
+}
+
+.large-job-card-description::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 1.3em;
+}
+  .large-job-card-description h1,
+  .large-job-card-description h2,
+  .large-job-card-description h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2em;
+    color: #ffffff;
+  }
+  
+  .large-job-card-description p {
+    margin: 0;
     color: #C8C8C8;
-    display: -webkit-box;
-    padding-left: 0px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    font-size: 12px;
     line-height: 1.3em;
-    max-height: calc(1.3em * 2); /* Optional, for extra safety */
+  }
+  
+  .large-job-card-description strong {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  
+  .large-job-card-description br {
+    display: block;
+    content: '';
+    margin-top: 4px;
   }

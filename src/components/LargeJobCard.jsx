@@ -12,9 +12,13 @@ const LargeJobCard = ({
   job_description,
   Skills,
   onClick,
+  isActive,
 }) => {
   return (
-    <div className="large-job-card" onClick={onClick}>
+    <div
+      className={`large-job-card ${isActive ? "active" : ""}`}
+      onClick={onClick}
+    >
       <div className="large-job-card-logo-container">
         <img
           src={logo}
@@ -77,6 +81,7 @@ LargeJobCard.propTypes = {
     })
   ),
   onClick: PropTypes.func,
+  isActive: PropTypes.bool, 
 };
 
 export default LargeJobCard;
