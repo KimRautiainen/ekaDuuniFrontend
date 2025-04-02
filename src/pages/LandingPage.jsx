@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar"; // Import Navbar
+import Navbar3 from "../components/Navbar3"; // Import Navbar
 import JobCarousel from "../components/JobCarousel"; // Import the Job Carousel
 import "./LandingPage.css";
 import logo from "../assets/devstart.svg";
@@ -17,7 +17,7 @@ const LandingPage = () => {
   return (
     <>
       {/* 🔹 Navbar */}
-      <Navbar />
+      <Navbar3 />
 
       {/* 🔹 Background Image */}
      

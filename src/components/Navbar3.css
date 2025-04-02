@@ -1,4 +1,4 @@
-.navbar2 {
+.navbar3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,10 +18,6 @@
     padding-left: 80px;
     
   }
-
-  .navbar-small-box {
-    color: var(--color-text-light);
-  }
   
   .logo {
     font-size: 20px;
@@ -33,8 +29,8 @@
   .nav-links {
     display: flex;
     list-style: none;
-    position: absolute; /* Asettaa linkit navbarin absoluuttiseen keskikohtaan */
-    left: 50%; /* Siirtää keskelle vaakasuunnassa */
+    position: absolute; 
+    left: 50%; 
     transform: translateX(-50%);
     gap: 88px;
     font-size: 15px;
@@ -49,22 +45,25 @@
   
   .nav-links a {
     text-decoration: none;
-    
     color: var(--color-text-light)
-   
   }
   
   .nav-right {
+    position: relative;
+    z-index: 500;
     display: flex;
     align-items: center;
     padding-right: 80px;
     gap: 22px;
   }
+  .navbar-small-box {
+    color: var(--color-text-light);
+  }
   
   .icon {
     width: 15px;
     height: 15px;
-    object-fit: contain; /* Varmistaa, ettei kuva veny */
+    object-fit: contain; 
     margin: 0 10px;
     cursor: pointer;
     color: var(--color-text-light)
@@ -93,16 +92,14 @@
   
   @media (max-width: 768px) {
     .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background: white;
-      width: 100%;
-      padding: 10px 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+        display: flex;
+        list-style: none;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 88px;
+        font-size: 15px;
+      }
     .nav-links.open {
       display: flex;
     }
@@ -134,7 +131,7 @@
   }
   
   .dropdown-menu {
-    position: absolute;
+    position: relative;
     top: 110%;
     right: 0;
     background-color: #1e1e1e;
