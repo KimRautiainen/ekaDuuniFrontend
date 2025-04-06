@@ -1,12 +1,14 @@
 import { useState, useContext, useEffect } from "react";
 import JobList from "../components/JobList";
 import JobDetails from "../components/JobDetails";
+import Navbar2 from "../components/Navbar2"
 import "../styles/JobListPage.css";
 import Navbar2 from "../components/Navbar2";
 import SearchBar from "../components/Searchbar";
 import JobContext from "../contexts/JobContext";
 
 const JobListPage = () => {
+  
   const [selectedJob, setSelectedJob] = useState(null);
   const [searchTerm, setSearchTerm] = useState(""); 
   const { jobs } = useContext(JobContext);
@@ -15,6 +17,7 @@ const JobListPage = () => {
   useEffect(() => {
     if (jobs && jobs.length > 0 && !selectedJob) {
       setSelectedJob(jobs[0]);
+
     }
   }, [jobs, selectedJob]);
 

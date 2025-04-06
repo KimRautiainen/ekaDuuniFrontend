@@ -72,10 +72,9 @@ const Navbar = () => {
             </div>
           </>
         ) : (
-          <div className="navbar-buttons">
-            <NavLink to="/register" className="navbar-small-box">Luo käyttäjä</NavLink>
+          <>
             <NavLink to="/login" className="navbar-small-box">Kirjaudu</NavLink>
-          </div>
+          </>
         )}
       </div>
     </nav>
