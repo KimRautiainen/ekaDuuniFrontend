@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import JobList from "../components/JobList";
 import JobDetails from "../components/JobDetails";
-import Navbar2 from "../components/Navbar2"
 import "../styles/JobListPage.css";
 import Navbar2 from "../components/Navbar2";
 import SearchBar from "../components/Searchbar";
