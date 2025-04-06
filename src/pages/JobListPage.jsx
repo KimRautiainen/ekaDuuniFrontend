@@ -35,7 +35,8 @@ const JobListPage = () => {
         <SearchBar
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onSearch={() => {}} // jos haluat painikkeen tehdä jotain, lisää tähän logiikkaa
+          onSearch={() => {
+          }} // jos haluat painikkeen tehdä jotain, lisää tähän logiikkaa
         />
         <div className="job-list-container">
           <JobList
