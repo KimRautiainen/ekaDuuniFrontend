@@ -85,21 +85,21 @@ function EditProfile() {
                 <div className="form-group">
                   <label>Etunimi</label>
                   <div className="input-with-icon">
-                    <FiUser className="input-icon" />
+                    <FiUser className="editprofile-input-icon" />
                     <input type="text" defaultValue="Erika" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label>Sukunimi</label>
                   <div className="input-with-icon">
-                    <FiUser className="input-icon" />
+                    <FiUser className="editprofile-input-icon" />
                     <input type="text" defaultValue="Esimerkki" />
                   </div>
                 </div>
                 <div className="form-group">
                   <label>Sähköposti</label>
                   <div className="input-with-icon">
-                    <FiMail className="input-icon" />
+                    <FiMail className="editprofile-input-icon" />
                     <input
                       type="email"
                       defaultValue="erika.esimerkki@gmail.com"
@@ -109,7 +109,7 @@ function EditProfile() {
                 <div className="form-group">
                   <label>Salasana</label>
                   <div className="input-with-icon">
-                    <FiLock className="input-icon" />
+                    <FiLock className="editprofile-input-icon" />
                     <input type="password" defaultValue="*********" />
                   </div>
                 </div>
