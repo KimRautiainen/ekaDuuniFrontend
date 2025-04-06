@@ -9,7 +9,7 @@
     padding: 0 12px;
     box-sizing: border-box;
     gap: 8px;
-    margin-left: 20px;
+    margin-left: 70px;
   }
   
   .search-icon {
@@ -29,7 +29,7 @@
   }
   
   .search-bar-button {
-    margin-right: -10px; 
+    margin-right: -9px; 
     height: 87%;
     background-color: #F3794C;
     color: #FFF;
@@ -40,7 +40,7 @@
     line-height: normal;
     letter-spacing: -0.22px;
     border: none;
-    border-radius: 10px;
+    border-radius: 7px;
     cursor: pointer;
   }
   .search-bar-wrapper {

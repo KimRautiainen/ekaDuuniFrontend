@@ -6,6 +6,11 @@ import {
 } from "react-icons/fa";
 
 const JobDetails = ({ job }) => {
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "";
+    return new Date(dateStr).toLocaleDateString("fi-FI");
+  };
+
   return (
     <div className="job-details">
       {/* Poster image */}
@@ -25,13 +30,23 @@ const JobDetails = ({ job }) => {
               {job.company}
               <FaExternalLinkAlt className="company-icon" />
             </span>
-            <span className="location">
-              <FaMapMarkerAlt className="location-icon" />
-              {job.location}
-            </span>
-            <span className="announcement-date">
-              {job.date}
-              <FaRegBookmark className="bookmark-icon" />
+
+            <div className="location-dates">
+            <FaMapMarkerAlt className="location-icon" />
+  {job.location}
+  <FaRegBookmark className="bookmark-icon" />
+  {job.start_date && job.end_date && (
+    <div className="date-range">
+      {" Julkaistu "}
+      {formatDate(job.start_date)}
+      {" - Päättyy "}
+      {formatDate(job.end_date)}
+    </div>
+  )}
+</div>
+
+<span className="announcement-date">{formatDate(job.date)}
+              
             </span>
           </div>
         </div>
@@ -43,7 +58,8 @@ const JobDetails = ({ job }) => {
 
       {/* Description */}
       <div className="job-description-section">
-        <h3 className="section-title">Työnkuvaus</h3>
+        <h3 className="section-title">Työpaikkakuvaus</h3>
+        <br />
         <div
           className="job-description"
           dangerouslySetInnerHTML={{ __html: job.job_description }}
@@ -57,7 +73,7 @@ const JobDetails = ({ job }) => {
           ))}
         </div>
 
-        <button className="apply-button">Hae työpaikkaa</button>
+        <button className="apply-button1">Hae työpaikkaa</button>
       </div>
     </div>
   );
