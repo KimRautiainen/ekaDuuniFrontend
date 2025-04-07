@@ -32,8 +32,8 @@ const JobListPage = () => {
 
   return (
     <>
-      <main className="job-list-page">
         <Navbar2 />
+      <main className="job-list-page">
         <SearchBar
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
