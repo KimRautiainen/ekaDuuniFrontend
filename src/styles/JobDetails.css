@@ -1,6 +1,6 @@
 /* JobDetails.css */
 
-.job-details {
+.jdp-container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -14,22 +14,22 @@
 }
 
 /* Poster image section */
-.poster-image-container {
+.jdp-poster-image-container {
   width: 100%;
   height: 120px;
   overflow: hidden;
   position: relative;
 }
 
-.poster-image {
+.jdp-poster-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* Header (logo + title + meta + button) */
-.job-header {
+/* Header */
+.jdp-header {
   display: flex;
   align-items: center;
   gap: 24px;
@@ -37,30 +37,29 @@
   border-bottom: 1px solid #1d1d1d;
 }
 
-.job-logo {
+.jdp-logo {
   width: 135px;
   height: 135px;
   border-radius: 8px;
   object-fit: cover;
   background-color: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-top: -60px; 
+  margin-top: -60px;
   margin-left: 15px;
   z-index: 1;
-  
 }
 
-.job-info {
+.jdp-info {
   flex-grow: 1;
 }
 
-.job-title {
+.jdp-title {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
 }
 
-.job-meta {
+.jdp-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -69,13 +68,13 @@
   color: #ccc;
 }
 
-.company-icon,
-.location-icon,
-.bookmark-icon {
+.jdp-company-icon,
+.jdp-location-icon,
+.jdp-bookmark-icon {
   margin-left: 6px;
 }
 
-.header-apply-button {
+.jdp-header-apply-button {
   background-color: #F3794C;
   border: none;
   padding: 8px 16px;
@@ -86,19 +85,19 @@
 }
 
 /* Description section */
-.job-description-section {
+.jdp-description-section {
   margin-top: 32px;
   width: 100%;
-  max-width: 100%; /* Estää keinotekoisen rajoittamisen */
+  max-width: 100%;
   box-sizing: border-box;
 }
 
-.section-title {
+.jdp-section-title {
   font-size: 18px;
   margin: 0 0 12px 0;
 }
 
-.job-description {
+.jdp-description {
   line-height: 1.6;
   font-size: 15px;
   color: #e2e2e2;
@@ -108,15 +107,15 @@
 }
 
 /* Tags */
-.job-tags-container {
+.jdp-tags-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin: 30px 0;
-  justify-content: center
+  justify-content: center;
 }
 
-.job-tag {
+.jdp-tag {
   background: linear-gradient(90deg, #4CC9F0 0%, #2C748A 100%);
   color: white;
   padding: 6px 12px;
@@ -124,8 +123,8 @@
   font-size: 14px;
 }
 
-/* Bottom Apply Button */
-.apply-button1 {
+/* Bottom Button */
+.jdp-apply-button-bottom {
   background-color: #F3794C;
   color: white;
   border: none;
@@ -137,7 +136,8 @@
   margin: 20px auto 0;
   width: 50%;
 }
-.location-dates {
+
+.jdp-location-dates {
   display: flex;
   align-items: center;
   gap: 6px;
