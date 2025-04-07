@@ -1,16 +1,17 @@
 import { useState, useRef, useEffect, useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
-import { AiOutlineBell } from "react-icons/ai";
+import { FaSearch, FaBars } from "react-icons/fa";
 import { FiLogOut, FiUser } from "react-icons/fi";
-import { FaBars } from "react-icons/fa";
 import "./Navbar3.css";
 import defaultAvatar from "../assets/images/profilepic.png";
 
 const Navbar3 = () => {
   const { user, logout } = useContext(AuthContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
@@ -29,18 +30,31 @@ const Navbar3 = () => {
 
   return (
     <nav className="navbar3-navbar">
-      <Link to="/" className="navbar3-logo">
-        &lt;DevStart<span className="navbar3-highlight">/</span>&gt;
-      </Link>
+      <div className="navbar3-left">
+        <Link to="/" className="navbar3-logo">
+          &lt;DevStart<span className="navbar3-highlight">/</span>&gt;
+        </Link>
 
-      <ul className={`navbar3-nav-links ${isMenuOpen ? "open" : ""}`}>
-        <li><NavLink to="/jobs">Työpaikat</NavLink></li>
-        <li><NavLink to="/jobadcreating">Työnantajille</NavLink></li>
-        <li><NavLink to="/editprofile">Profiili</NavLink></li>
-      </ul>
+        <ul className={`navbar3-nav-links ${isOpen ? "open" : ""}`}>
+          <li><NavLink to="/jobs">Työpaikat</NavLink></li>
+          <li><a href="#">Työnhakijalle</a></li>
+          <li><NavLink to="/jobadcreating">Työnantajille</NavLink></li>
+          <li><a href="#">Suosikit</a></li>
+          <li><a href="#">Kesätyöt 2025</a></li>
+        </ul>
+      </div>
 
       <div className="navbar3-nav-right">
-        <AiOutlineBell className="navbar3-icon" />
+        {searchOpen && (
+          <input
+            type="text"
+            className="navbar3-search-input"
+            placeholder="Hae..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        )}
+        <FaSearch className="navbar3-icon" onClick={() => setSearchOpen(!searchOpen)} />
 
         {user ? (
           <div className="navbar3-profile-dropdown" ref={dropdownRef}>
@@ -67,10 +81,7 @@ const Navbar3 = () => {
           </NavLink>
         )}
 
-        <FaBars
-          className="navbar3-menu-icon"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        />
+        <FaBars className="navbar3-menu-icon" onClick={() => setIsOpen(!isOpen)} />
       </div>
     </nav>
   );
