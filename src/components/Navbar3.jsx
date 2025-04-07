@@ -5,7 +5,7 @@ import { AiOutlineBell } from "react-icons/ai";
 import { FiLogOut, FiUser } from "react-icons/fi";
 import { FaBars } from "react-icons/fa";
 import "./Navbar3.css";
-import defaultAvatar from "../assets/images/avatar.png";
+import defaultAvatar from "../assets/images/profilepic.png";
 
 const Navbar3 = () => {
   const { user, logout } = useContext(AuthContext);
@@ -28,55 +28,47 @@ const Navbar3 = () => {
   }, []);
 
   return (
-    <nav className="navbar3">
-      <Link to="/" className="logo">
-        &lt;DevStart<span className="highlight">/</span>&gt;
+    <nav className="navbar3-navbar">
+      <Link to="/" className="navbar3-logo">
+        &lt;DevStart<span className="navbar3-highlight">/</span>&gt;
       </Link>
 
-      <ul className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-        <li>
-          <NavLink to="/jobs">Työpaikat</NavLink>
-        </li>
-        <li>
-          <NavLink to="/jobadcreating">Työnantajille</NavLink>
-        </li>
-        <li>
-          <NavLink to="/editprofile">Profiili</NavLink>
-        </li>
+      <ul className={`navbar3-nav-links ${isMenuOpen ? "open" : ""}`}>
+        <li><NavLink to="/jobs">Työpaikat</NavLink></li>
+        <li><NavLink to="/jobadcreating">Työnantajille</NavLink></li>
+        <li><NavLink to="/editprofile">Profiili</NavLink></li>
       </ul>
 
-      <div className="nav-right">
-        <AiOutlineBell className="icon" />
+      <div className="navbar3-nav-right">
+        <AiOutlineBell className="navbar3-icon" />
 
         {user ? (
-          <div className="profile-dropdown" ref={dropdownRef}>
+          <div className="navbar3-profile-dropdown" ref={dropdownRef}>
             <img
               src={defaultAvatar}
               alt="Profile"
-              className="user-img"
+              className="navbar3-user-img"
               onClick={toggleDropdown}
             />
             {isDropdownOpen && (
-              <div className="dropdown-menu">
-                <NavLink to="/profile" className="dropdown-item">
-                  <FiUser className="dropdown-icon" /> Profiili
+              <div className="navbar3-dropdown-menu">
+                <NavLink to="/profile" className="navbar3-dropdown-item">
+                  <FiUser className="navbar3-dropdown-icon" /> Profiili
                 </NavLink>
-                <button onClick={logout} className="dropdown-item logout">
-                  <FiLogOut className="dropdown-icon" /> Kirjaudu ulos
+                <button onClick={logout} className="navbar3-dropdown-item navbar3-logout">
+                  <FiLogOut className="navbar3-dropdown-icon" /> Kirjaudu ulos
                 </button>
               </div>
             )}
           </div>
         ) : (
-          <>
-            <NavLink to="/login" className="navbar-small-box">
-              Kirjaudu
-            </NavLink>
-          </>
+          <NavLink to="/login" className="navbar3-small-box">
+            Kirjaudu
+          </NavLink>
         )}
 
         <FaBars
-          className="menu-icon"
+          className="navbar3-menu-icon"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
       </div>
