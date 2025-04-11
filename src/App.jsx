@@ -5,6 +5,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import LandingPage from "./pages/LandingPage";
 import JobAdCreating from "./pages/JobAdCreating";
 import JobListPage from "./pages/JobListPage";
+import JobSeekerProfile from "./pages/JobSeekerProfile";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         }
       />
       <Route path="/jobadcreating" element={<JobAdCreating />} />
+      <Route path="/jobseekerprofile" element={<JobSeekerProfile />} />
     </Routes>
   );
 }

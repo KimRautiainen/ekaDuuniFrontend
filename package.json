@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@tiptap/extension-link": "^2.11.6",
     "@tiptap/extension-placeholder": "^2.11.6",
     "@tiptap/extension-underline": "^2.11.6",
