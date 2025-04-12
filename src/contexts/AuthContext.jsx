@@ -4,20 +4,26 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 import { authUrl } from "../utils/app-config";
+import useUser from "../hooks/userHooks";
 
 const AuthContext = createContext(); // Create a context
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null); // Create a state to store the user
   const navigate = useNavigate(); // Create a navigate function
+  const { getUserWithToken } = useUser(); // Import the getUserWithToken function from userHooks
 
-  // Check if token is in the local storage when component mounts
   useEffect(() => {
-    const token = localStorage.getItem("token"); // Get the token from the local storage
-    if (token) {
-      const decoded = jwtDecode(token); // Decode the token
-      setUser(decoded); // Set the user state
-    }
+    const loadUser = async () => {
+      const token = localStorage.getItem("token");
+      if (token) {
+        const fullUser = await getUserWithToken(); // fetch full user data from backend
+        console.log("Full user data:", fullUser); // Debugging line
+        if (fullUser) setUser(fullUser);
+      }
+    };
+
+    loadUser();
   }, []);
 
   // Register function
@@ -33,6 +39,7 @@ export const AuthProvider = ({ children }) => {
 
       // Set user state
       setUser(res.data.user);
+     
 
       // Navigate to dashboard
       navigate("/dashboard");
@@ -59,6 +66,7 @@ export const AuthProvider = ({ children }) => {
 
       // Set user from backend response
       setUser(res.data.user);
+      console.log("User registered successfully:", res.data.user);
 
       navigate("/dashboard"); // Redirect to dashboard
       return true;
