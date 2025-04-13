@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar2 from "../components/Navbar2";
 import { FiUser, FiMail, FiLock } from "react-icons/fi";
@@ -6,35 +6,51 @@ import AuthContext from "../contexts/AuthContext";
 import ProfileContext from "../contexts/ProfileContext";
 import "./EditProfile.css";
 import useProfile from "../hooks/profileHooks";
+import useUser from "../hooks/userHooks";
 import { FiEdit2, FiX } from "react-icons/fi";
 import MDEditor from "@uiw/react-md-editor";
 
 function EditProfile() {
   const { user, setUser } = useContext(AuthContext); // Get user and setUser from AuthContext
   const { profile, setProfile } = useContext(ProfileContext); // Get profile and setProfile from ProfileContext
-  const [coverImagePreview, setCoverImagePreview] = useState(
+  /*  const [coverImagePreview, setCoverImagePreview] = useState(
     profile?.profile?.cover_photo || "src/assets/images/wide.png"
   );
   const [profileImagePreview, setProfileImagePreview] = useState(
     profile?.profile?.profile_picture || "src/assets/images/profilepic.png"
-  );
+  ); */
   const [projectImages, setProjectImages] = useState([]); // State to hold project images
   const [techInput, setTechInput] = useState(""); // State to hold technology input
   const [techTags, setTechTags] = useState([]); // State to hold technology tags
   const [projectDescription, setProjectDescription] = useState(""); // State to hold project description
-  const { getProfile } = useProfile(); // Get getProfile function from useProfile hook
   const [mode, setMode] = useState("edit");
+  const [profileBio, setProfileBio] = useState(profile?.profile?.bio || "");
+  const { updateProfile, createProfile, getProfile } = useProfile();
+  const { updateUser } = useUser();
+  const [github, setGithub] = useState("");
+  const [portfolio, setPortfolio] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const [coverImagePreview, setCoverImagePreview] = useState(
+    "src/assets/images/wide.png"
+  );
+  const [profileImagePreview, setProfileImagePreview] = useState(
+    "src/assets/images/profilepic.png"
+  );
+
+  const coverImageRef = useRef(null);
+  const profileImageRef = useRef(null);
 
   // MOVE THE USE EFFECT TO PROFILE WHEN IT'S READY
   useEffect(() => {
     const fetchProfile = async () => {
-      const profileData = await getProfile(); // Fetch profile data
-      if (profileData) {
-        setProfile(profileData); // Set profile data in context
-      }
+      const profileData = await getProfile();
+      if (profileData) setProfile(profileData);
     };
-    if (!profile) fetchProfile(); // Fetch profile data if not already set
-  }, [profile, setProfile, getProfile]); // Dependency array to avoid infinite loop
+    if (!profile) fetchProfile();
+  }, [profile, setProfile, getProfile]);
 
   useEffect(() => {
     if (profile?.profile) {
@@ -44,11 +60,55 @@ function EditProfile() {
       setProfileImagePreview(
         profile.profile.profile_picture || "src/assets/images/profilepic.png"
       );
+      setProfileBio(profile.profile.bio || "");
+      setGithub(profile.profile.github || "");
+      setPortfolio(profile.profile.portfolio || "");
     }
-  }, [profile]);
+
+    if (user?.user) {
+      const [first, last] = user.user.full_name?.split(" ") || ["", ""];
+      setFirstName(first);
+      setLastName(last);
+      setEmail(user.user.email || "");
+    }
+  }, [profile, user]);
 
   console.log("User data:", user); // Debugging line
   console.log("Profile data:", profile); // Debugging line
+
+  const handleSaveChanges = async () => {
+    try {
+      const fullName = `${firstName} ${lastName}`.trim();
+
+      await updateUser({ full_name: fullName, email });
+
+      const formData = new FormData();
+      formData.append("bio", profileBio);
+      formData.append("github", github);
+      formData.append("portfolio", portfolio);
+      console.log("Form data:", formData); // Debugging line
+
+      if (coverImageRef.current?.files?.[0]) {
+        formData.append("cover_photo", coverImageRef.current.files[0]);
+      }
+
+      if (profileImageRef.current?.files?.[0]) {
+        formData.append("profile_picture", profileImageRef.current.files[0]);
+      }
+
+     
+      if (profile?.profile?.id) {
+        await updateProfile(formData);
+      } else {
+        await createProfile(formData);
+      }
+
+      alert("Tiedot tallennettu!");
+    } catch (error) {
+      console.error("Virhe tallennettaessa:", error);
+      alert("Virhe tallennettaessa tietoja.");
+    }
+  };
 
   return (
     <div className="edit-profile-container">
@@ -60,47 +120,26 @@ function EditProfile() {
         <div className="cover-photo-container">
           <label className="cover-photo-label">
             <img
-              src={coverImagePreview || "src/assets/images/wide.png"}
+              src={coverImagePreview}
               alt="Kansikuva"
               className="cover-photo"
             />
             <div className="cover-overlay">Lisää uusi kansikuva</div>
-
-            {/* Reset Button */}
-            {profile?.profile?.cover_photo &&
-              coverImagePreview !== profile.profile.cover_photo && (
-                <button
-                  className="reset-button cover-reset-button"
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setCoverImagePreview(profile.profile.cover_photo);
-                  }}
-                >
-                  <FiX />
-                </button>
-              )}
-
             <input
-              id="cover-input"
+              ref={coverImageRef}
               type="file"
               accept="image/*"
               style={{ display: "none" }}
-              onClick={(e) => (e.target.value = null)} // Reset input so same file can be reselected
               onChange={(e) => {
                 const file = e.target.files[0];
-                if (file) {
-                  const imageUrl = URL.createObjectURL(file);
-                  setCoverImagePreview(imageUrl);
-                }
+                if (file) setCoverImagePreview(URL.createObjectURL(file));
               }}
             />
           </label>
         </div>
 
-        {/* Profiilin sisältö */}
         <div className="edit-profile-content">
-          {/* Vasen puoli */}
+          {/* Profiilikuva + linkit */}
           <div className="profile-left">
             <label className="profile-image-label profile-image-container profile-overlap">
               <img
@@ -110,34 +149,19 @@ function EditProfile() {
               />
               <div className="profile-image-overlay">
                 <FiEdit2 className="edit-icon" />
-                {profile?.profile?.profile_picture &&
-                  profileImagePreview !== profile.profile.profile_picture && (
-                    <button
-                      className="reset-button"
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setProfileImagePreview(profile.profile.profile_picture);
-                      }}
-                    >
-                      <FiX />
-                    </button>
-                  )}
               </div>
               <input
+                ref={profileImageRef}
                 type="file"
                 accept="image/*"
                 style={{ display: "none" }}
                 onChange={(e) => {
                   const file = e.target.files[0];
-                  if (file) {
-                    const imageUrl = URL.createObjectURL(file);
-                    setProfileImagePreview(imageUrl);
-                  }
+                  if (file) setProfileImagePreview(URL.createObjectURL(file));
                 }}
               />
             </label>
-            <h2 className="profile-name">{user?.user?.full_name || ""}</h2>
+            <h2 className="profile-name">{`${firstName} ${lastName}`}</h2>
             <p className="profile-subtitle">
               Tietotekniikan insinööriopiskelija
             </p>
@@ -152,7 +176,8 @@ function EditProfile() {
                 <label>GitHub</label>
                 <input
                   type="text"
-                  defaultValue={profile?.profile?.github || ""}
+                  value={github}
+                  onChange={(e) => setGithub(e.target.value)}
                   placeholder="https://github.com/käyttäjänimi"
                 />
               </div>
@@ -161,14 +186,15 @@ function EditProfile() {
                 <label>Nettisivu</label>
                 <input
                   type="text"
-                  defaultValue={profile?.profile?.portfolio || ""}
+                  value={portfolio}
+                  onChange={(e) => setPortfolio(e.target.value)}
                   placeholder="https://omatsivut.com"
                 />
               </div>
             </div>
           </div>
 
-          {/* Oikea puoli */}
+          {/* Käyttäjätiedot + bio */}
           <div className="profile-right-wrapper">
             <h3 className="section-title">Käyttäjätiedot</h3>
             <div className="profile-right">
@@ -179,7 +205,8 @@ function EditProfile() {
                     <FiUser className="editprofile-input-icon" />
                     <input
                       type="text"
-                      defaultValue={user?.user?.full_name?.split(" ")[0] || ""}
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
                       placeholder="Etunimi"
                     />
                   </div>
@@ -190,7 +217,8 @@ function EditProfile() {
                     <FiUser className="editprofile-input-icon" />
                     <input
                       type="text"
-                      defaultValue={user?.user?.full_name?.split(" ")[1] || ""}
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
                       placeholder="Sukunimi"
                     />
                   </div>
@@ -201,7 +229,8 @@ function EditProfile() {
                     <FiMail className="editprofile-input-icon" />
                     <input
                       type="email"
-                      defaultValue={user?.user?.email || ""}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       placeholder="Sähköposti"
                     />
                   </div>
@@ -210,18 +239,36 @@ function EditProfile() {
                   <label>Salasana</label>
                   <div className="input-with-icon">
                     <FiLock className="editprofile-input-icon" />
-                    <input type="password" defaultValue="********" />{" "}
-                    {/* Placeholder for password input, Make it to post new password to backend and add confirmation input box*/}
+                    <input type="password" placeholder="********" disabled />
                   </div>
                 </div>
+
+                {/* Bio (markdown editor) */}
                 <div className="form-group full-width">
                   <label>Esittelyteksti</label>
-                  <div className="input-with-icon">
-                    <textarea
-                      maxLength={1000}
-                      rows="6"
-                      defaultValue={profile?.profile?.bio || ""}
-                    ></textarea>
+                  <div data-color-mode="dark" className="markdown-wrapper">
+                    <div className="toggle-buttons">
+                      <button
+                        className={mode === "edit" ? "active" : ""}
+                        onClick={() => setMode("edit")}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className={mode === "preview" ? "active" : ""}
+                        onClick={() => setMode("preview")}
+                      >
+                        Preview
+                      </button>
+                    </div>
+                    <MDEditor
+                      value={profileBio}
+                      onChange={setProfileBio}
+                      preview={mode}
+                      hideToolbar={true}
+                      maxLength={200}
+                    />
+                    <p className="markdown-support-label">Markdown supported</p>
                   </div>
                 </div>
               </div>
@@ -311,39 +358,25 @@ function EditProfile() {
               </div>
             </div>
 
-            <div className="github-project-description">
+            <div className="form-group full-width">
               <label>Lyhyt esittely projektista</label>
               <p className="info-subtext">
                 Kerro tärkeimmät osat siitä mitä ja miten teit.
               </p>
-
-              <div data-color-mode="dark" className="markdown-wrapper">
-                <div className="toggle-buttons">
-                  <button
-                    className={mode === "edit" ? "active" : ""}
-                    onClick={() => setMode("edit")}
-                  >
-                    Edit
-                  </button>
-                  <button
-                    className={mode === "preview" ? "active" : ""}
-                    onClick={() => setMode("preview")}
-                  >
-                    Preview
-                  </button>
-                </div>
-                <MDEditor
-                  value={projectDescription}
-                  onChange={setProjectDescription}
-                  preview={mode}
-                  hideToolbar={true}
-                />
-                <p className="markdown-support-label">Markdown supported</p>
-              </div>
+              <textarea
+                className="project-textarea"
+                maxLength={1000}
+                rows={6}
+                value={projectDescription}
+                onChange={(e) => setProjectDescription(e.target.value)}
+                placeholder="Kirjoita lyhyt kuvaus projektista..."
+              />
             </div>
 
             <div className="form-group full-width">
-              <label className="header-below-textbox">Projektissa käytetyt teknologiat</label>
+              <label className="header-below-textbox">
+                Projektissa käytetyt teknologiat
+              </label>
               <p className="info-subtext">
                 Lisää tähän kaikki projektissa käyttämäsi teknologiat.
               </p>
@@ -582,7 +615,9 @@ function EditProfile() {
           </div>
         </div>
         <div className="save-changes-container">
-          <button className="save-changes-button">Tallenna muutokset</button>
+          <button className="save-changes-button" onClick={handleSaveChanges}>
+            Tallenna muutokset
+          </button>
         </div>
       </div>
     </div>

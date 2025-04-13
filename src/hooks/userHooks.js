@@ -31,7 +31,7 @@ const useUser = () => {
     };
     // Update user
     const updateUser = async (user) => {
-        if (!user || !user.id) return console.error("❌ Missing user ID or data."); // check if user is null
+        if (!user ) return console.error("❌ Missing userdata"); // check if user is null
         try {
             const config = getAuthConfig(); // get auth config
             if (!config) return null; // check if config is null

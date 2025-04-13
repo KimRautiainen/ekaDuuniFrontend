@@ -30,11 +30,11 @@ const useProfile = () => {
   }
   // Update a profile
     const updateProfile = async (profile) => {
-        if (!profile || !profile.id) return console.error("❌ Missing profile ID or data."); // check if profile is null
+        if (!profile ) return console.error("❌ Missing profile data."); // check if profile is null
         try {
-        const config = getAuthConfig(); // get auth config
+        const config = getAuthConfig(true); // get auth config
         if (!config) return null; // check if config is null
-        const response = await axios.patch(apiUrl + "profile/" + profile.id, profile, config); // make PATCH request to profile endpoint
+        const response = await axios.patch(apiUrl + "profile/", profile, config); // make PATCH request to profile endpoint
         return response.data; // return profile data
         } catch (error) {
         console.error("Error updating profile:", error.response?.data || error); // log error

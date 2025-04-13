@@ -185,6 +185,17 @@ label {
   font-size: 1rem;
   pointer-events: none;
 }
+.project-textarea {
+  border: 0.5px solid rgba(47, 47, 47, 0.25);
+  background: #111;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  width: 90%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
 
 .input-with-icon input,
 .input-with-icon textarea {
