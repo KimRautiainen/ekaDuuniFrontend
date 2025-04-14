@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import "./Login.css";
+import { Link } from "react-router-dom";
 import googleLogo from "../../assets/web_light_rd_ctn.svg"; // Google logo
 import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from "react-icons/ai";
 import DevStartLogo from "../../components/DevStartLogo";
@@ -27,14 +28,14 @@ const Login = () => {
       !formData.password ||
       (isRegistering && !formData.fullName)
     ) {
-      setError("Please fill in all fields.");
+     setError("Täytä kaikki kentät.");
       return;
     }
     setError("");
     if (isRegistering) {
       const success = await register(formData);
       if (!success) {
-        setError("Registration failed. Try again.");
+        setError("Rekisteröinti epäonnistui. Yritä uudelleen.");
       }
     } else {
       const success = await login({
@@ -42,7 +43,7 @@ const Login = () => {
         password: formData.password,
       });
       if (!success) {
-        setError("Invalid email or password.");
+        setError("Väärä salasana tai sähköposti.");
       }
     }
   };
@@ -55,14 +56,15 @@ const Login = () => {
       </div>
 
       {/* Top Right Logo */}
-      <DevStartLogo />
-
+      <Link to="/" className="logo-link">
+        <DevStartLogo />
+      </Link>
       {/* Right Side - Login / Register Form */}
       <div className="auth-form-container">
         {isRegistering ? (
           <form onSubmit={handleSubmit} className="auth-form">
             <h1 className="login-header">Register</h1>
-            <div className="input-container">
+            <div className="login-input-container">
               <AiOutlineUser className="input-icon" />
               <input
                 type="text"
@@ -74,7 +76,7 @@ const Login = () => {
               />
             </div>
 
-            <div className="input-container">
+            <div className="login-input-container">
               <AiOutlineMail className="input-icon" />
               <input
                 type="email"
@@ -86,7 +88,7 @@ const Login = () => {
               />
             </div>
 
-            <div className="input-container">
+            <div className="login-input-container">
               <AiOutlineLock className="input-icon" />
               <input
                 type="password"
@@ -121,8 +123,8 @@ const Login = () => {
             <h1 className="login-header">Log In</h1>
             {error && <p className="auth-error">{error}</p>}
 
-            <div className="input-container">
-            <AiOutlineMail className="input-icon" />
+            <div className="login-input-container">
+              <AiOutlineMail className="input-icon" />
               <input
                 type="email"
                 name="email"
@@ -132,8 +134,8 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="input-container">
-            <AiOutlineLock className="input-icon" />
+            <div className="login-input-container">
+              <AiOutlineLock className="input-icon" />
               <input
                 type="password"
                 name="password"
@@ -171,7 +173,6 @@ const Login = () => {
             <button type="button" className="google-button">
               <img src={googleLogo} alt="Google logo" className="google-logo" />
             </button>
-
           </form>
         )}
       </div>

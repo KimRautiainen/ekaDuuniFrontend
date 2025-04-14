@@ -50,6 +50,10 @@
     text-decoration: none;
     color: var(--color-text-light);
   }
+
+  .navbar3-nav-links a :hover {
+    color: #c7c7c7;
+  }
   
   .navbar3-nav-right {
     display: flex;
