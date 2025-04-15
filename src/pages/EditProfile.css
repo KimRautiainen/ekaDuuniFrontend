@@ -5,6 +5,7 @@
   background-color: #111111;
   color: white;
   padding-left: 0px; 
+  
 }
 
 .edit-profile-main {
@@ -140,6 +141,7 @@
   flex-direction: column;
   gap: 0.5rem;
   margin-top: 2px;
+  max-width: 500px;
 }
 
 .section-title {
@@ -160,10 +162,12 @@
   display: flex;
   flex-direction: column;
   margin-bottom: .5rem;
+  
 }
 
 .full-width {
   grid-column: span 2;
+  
 }
 
 label {
@@ -680,30 +684,15 @@ label {
   font-weight: 500;
 }
 .markdown-wrapper {
-  background-color: #111;
+  position: a;
+  background-color: #111 !important;
   border-radius: 5px;
   border: 0.5px solid rgba(47, 47, 47, 0.25);
   box-shadow: none !important;
   width: 100%;
+  resize: vertical;
 }
 
-/* div.w-md-editor-content {
-  width: 100% !important;
-  height: 100% !important;
-  color: white !important;
-  background-color: #111 !important;
-  border: none !important;
-  box-shadow: none !important;
-} */
-/* .w-md-editor-show-preview {
-  background-color: transparent !important;
-  color: white !important;
-  border-radius: 5px;
-  border: 0.5px solid rgba(47, 47, 47, 0.25);
-
-  box-shadow: none !important;
-  padding: 0 !important;
-} */
 .wmde-markdown-color {
   color: white !important;
   background-color: #111 !important;
@@ -711,19 +700,21 @@ label {
 }
 .wmde-markdown{
   font-size: 0.9rem !important;
+
+  
 }
 
 .markdown-support-label {
   font-size: 0.7rem;
   color: #aaaaaab5;
-  ;
-  
 }
 .w-md-editor{
   box-shadow: none !important;
   background-color: #111 !important;
   border: 0.5px solid rgba(47, 47, 47, 0.25);
- 
+  border-radius: 50px;
+  width: 100% !important;
+  
 }
 .w-md-editor-preview {
   background-color: #111 !important;
@@ -735,3 +726,4 @@ label {
 .header-below-textbox {
   margin-top: .5rem;
 }
+

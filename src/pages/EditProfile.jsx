@@ -96,7 +96,6 @@ function EditProfile() {
         formData.append("profile_picture", profileImageRef.current.files[0]);
       }
 
-     
       if (profile?.profile?.id) {
         await updateProfile(formData);
       } else {
@@ -261,12 +260,14 @@ function EditProfile() {
                         Preview
                       </button>
                     </div>
+
                     <MDEditor
                       value={profileBio}
                       onChange={setProfileBio}
                       preview={mode}
                       hideToolbar={true}
-                      maxLength={200}
+                      
+                    
                     />
                     <p className="markdown-support-label">Markdown supported</p>
                   </div>
