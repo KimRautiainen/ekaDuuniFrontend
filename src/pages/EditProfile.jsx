@@ -7,6 +7,7 @@ import ProfileContext from "../contexts/ProfileContext";
 import "./EditProfile.css";
 import useProfile from "../hooks/profileHooks";
 import useUser from "../hooks/userHooks";
+import useProjects from "../hooks/projectHooks";
 import { FiEdit2, FiX } from "react-icons/fi";
 import MDEditor from "@uiw/react-md-editor";
 
@@ -32,6 +33,9 @@ function EditProfile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [projectName, setProjectName] = useState("");
+  const [projectLink, setProjectLink] = useState("");
+  const { createProject } = useProjects();
 
   const [coverImagePreview, setCoverImagePreview] = useState(
     "src/assets/images/wide.png"
@@ -78,28 +82,53 @@ function EditProfile() {
 
   const handleSaveChanges = async () => {
     try {
+      // Update user basic info
       const fullName = `${firstName} ${lastName}`.trim();
-
       await updateUser({ full_name: fullName, email });
 
-      const formData = new FormData();
-      formData.append("bio", profileBio);
-      formData.append("github", github);
-      formData.append("portfolio", portfolio);
-      console.log("Form data:", formData); // Debugging line
+      // Prepare profile form data
+      const profileForm = new FormData();
+      profileForm.append("bio", profileBio);
+      profileForm.append("github", github);
+      profileForm.append("portfolio", portfolio);
 
       if (coverImageRef.current?.files?.[0]) {
-        formData.append("cover_photo", coverImageRef.current.files[0]);
+        profileForm.append("cover_photo", coverImageRef.current.files[0]);
       }
 
       if (profileImageRef.current?.files?.[0]) {
-        formData.append("profile_picture", profileImageRef.current.files[0]);
+        profileForm.append("profile_picture", profileImageRef.current.files[0]);
       }
 
+      // Update or create profile
       if (profile?.profile?.id) {
-        await updateProfile(formData);
+        await updateProfile(profileForm);
       } else {
-        await createProfile(formData);
+        await createProfile(profileForm);
+      }
+
+      if (projectImages.length > 0 && projectName && projectLink) {
+        const projectForm = new FormData();
+        projectForm.append("name", projectName);
+        projectForm.append("description", projectDescription);
+        projectForm.append("github_link", projectLink);
+        projectForm.append("live_demo", "https://myportfolio.com"); // optional, add input later
+
+        // Add skills as an array (your backend expects this as skills[])
+        techTags.forEach((tech) => {
+          projectForm.append("skills[]", tech);
+        });
+
+        // Append each image
+        projectImages.forEach((imgObj) => {
+          projectForm.append("project_media", imgObj.file);
+        });
+
+        // Optional future support for dates:
+        // projectForm.append("start_date", "2024-03-15");
+        // projectForm.append("end_date", "2024-06-15");
+
+        await createProject(projectForm);
       }
 
       alert("Tiedot tallennettu!");
@@ -266,8 +295,6 @@ function EditProfile() {
                       onChange={setProfileBio}
                       preview={mode}
                       hideToolbar={true}
-                      
-                    
                     />
                     <p className="markdown-support-label">Markdown supported</p>
                   </div>
@@ -293,12 +320,19 @@ function EditProfile() {
               <input
                 type="text"
                 placeholder="https://github.com/ErikaEsimerkki/weather-app"
+                value={projectLink}
+                onChange={(e) => setProjectLink(e.target.value)}
               />
             </div>
 
             <div className="form-group full-width">
               <label>Lisää projektille nimi</label>
-              <input type="text" placeholder="Weather App" />
+              <input
+                type="text"
+                placeholder="Weather App"
+                value={projectName}
+                onChange={(e) => setProjectName(e.target.value)}
+              />
             </div>
 
             <div className="form-group full-width">
