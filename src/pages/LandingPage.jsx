@@ -17,16 +17,14 @@ const LandingPage = () => {
     <>
       {/* 🔹 Navbar */}
       <Navbar3 />
-
-      {/* 🔹 Background Image */}
-
-      <div className="landing-man-container">
+      <div className="landing-container">
+        {/* 🔹 Logo and Title */}
+        <div className="landing-man-container">
+        {/* 🔹 Background Image */}
         <div className="landing-man-circle"></div>
         <img src={manpc} alt="manpc" className="manpc" />
       </div>
-
-      <div className="landing-container">
-        {/* 🔹 Logo and Title */}
+        <div className="landing-firstsite-container">
         <div className="landing-logo-text">
           Helpoin <br /> tie duuniin<span className="dot">.</span>
         </div>
@@ -69,6 +67,7 @@ const LandingPage = () => {
             50+ työpaikkaa
             </p>
           </div>
+        </div>
         </div>
 
         {/* 🔹 Job Carousel Component */}
