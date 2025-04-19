@@ -20,8 +20,12 @@ html,
 body {
     overflow-x: hidden;
     margin: 0;
-    padding: 0;
     width: 100%;
+}
+
+.landing-firstsite-container {
+    padding-top: 2%;
+    position: absolute;
 }
 
 .landing-logo-text {
@@ -50,14 +54,13 @@ body {
     color: #F3794C;
 }
 
-
 .landing-man-container {
-    position: absolute;
-    top: 177px;
-    right: 855px;
+    position: relative;
+    top: 230px;
+    left: 890px;
     width: 600px;
     height: 600px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .landing-man-circle {
