@@ -68,8 +68,8 @@ const JobAdCreating = () => {
 
     // Append actual image files (not blob URLs!)
     if (form.logoFile) formData.append("logo", form.logoFile);
-    if (form.posterImageFile)
-      formData.append("poster_image", form.posterImageFile);
+    if (form.poster_imageFile)
+      formData.append("poster_image", form.poster_imageFile);
 
     const result = await createJob(formData);
     if (result) alert("Job created successfully!");

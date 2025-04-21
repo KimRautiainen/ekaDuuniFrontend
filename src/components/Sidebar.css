@@ -1,0 +1,74 @@
+.sidebar {
+    background-color: #0f0f0f;
+    color: white;
+    height: 100vh;
+    width: 340px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 70px;
+    justify-content: space-between;
+    border-right: 1px solid rgba(47, 47, 47, 0.25);
+  }
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 70px;
+      padding: 10px;
+    }
+  
+    .sidebar .sidebar-item span {
+      display: none; /* Piilota tekstit, jos käytät ikoneja + teksti */
+    }
+  }
+  .sidebar.collapsed {
+    width: 70px;
+  }
+  .sidebar-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px; 
+  }
+  
+  
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #131313;
+    border-radius: 0px;
+  }
+  
+ 
+  .logout:hover {
+    background-color: #131313;
+    color: #ff4d4d;
+    border-radius: 0px;
+  }
+  .icon {
+    font-size: 20px;
+  }
+  
+ 

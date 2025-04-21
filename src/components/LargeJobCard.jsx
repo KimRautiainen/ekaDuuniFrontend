@@ -14,6 +14,13 @@ const LargeJobCard = ({
   onClick,
   isActive,
 }) => {
+  // Determine displayed skills
+  const displayedSkills = Skills
+    ? Skills.length > 2
+      ? [Skills[0].name, `+${Skills.length - 1}`]
+      : Skills.map((s) => s.name)
+    : [];
+
   return (
     <div
       className={`large-job-card ${isActive ? "active" : ""}`}
@@ -35,9 +42,9 @@ const LargeJobCard = ({
           </div>
 
           <div className="large-job-card-tags">
-            {Skills?.map((skill, idx) => (
+            {displayedSkills.map((skill, idx) => (
               <span key={idx} className="large-job-card-tag">
-                {skill.name}
+                {skill}
               </span>
             ))}
           </div>
@@ -81,7 +88,7 @@ LargeJobCard.propTypes = {
     })
   ),
   onClick: PropTypes.func,
-  isActive: PropTypes.bool, 
+  isActive: PropTypes.bool,
 };
 
 export default LargeJobCard;

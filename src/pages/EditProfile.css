@@ -1,0 +1,511 @@
+.edit-profile-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #111111;
+  color: white;
+  padding-left: 0px; 
+}
+
+.edit-profile-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 63px; 
+}
+
+.edit-profile-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Vasemman puolen alue profiilikuville */
+.profile-left {
+  width: 25%;
+  margin-left: -100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+.profile-subtitle {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: -.5rem;
+  text-align: left;
+}
+.profile-subtitle,
+.profile-extra-info {
+  width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+}
+.info-heading,
+.info-subtext {
+  width: 100%;
+  margin-left: 0;
+  padding-left: 0;
+}
+.profile-extra-info {
+  margin-top: -.2rem;
+  text-align: left;
+}
+.profile-extra-info input {
+  border-radius: 5px;
+  border: 0.5px solid rgba(47, 47, 47, 0.25);
+  background: #111;
+  padding: 10px;
+  color: white;
+  width: 100%;
+}
+.info-heading {
+  font-weight: 600;
+  margin-bottom: -1rem;
+}
+
+.info-subtext {
+  font-size: 0.75rem;
+  color: #bbb;
+  line-height: 1.4;
+}
+.profile-image-container {
+  position: relative;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  border: 0.5px solid #898989;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 1px;
+  right: -4px;
+  background-color: #F3794C;
+  border: 1px solid white;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+}
+
+.profile-name {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: -.5rem;
+}
+
+.profile-title {
+  color: #aaa;
+  text-align: center;
+}
+
+/* Oikean puolen alue käyttäjätiedoille */
+.profile-right {
+  width: 100%; 
+  background-color: #111111;
+  padding: 2rem;
+  margin-top: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(47, 47, 47, 0.25);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.profile-right-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2px;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 0.5rem;
+}
+
+/* Lomakkeen tyyli */
+.profile-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; /* vähän lisää tilaa kenttien väliin */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .5rem;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+label {
+  color: #ffffff;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.editprofile-input-icon {
+  position: absolute;
+  left: 10px;
+  color: white;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+  border: 0.5px solid rgba(47, 47, 47, 0.25);
+  background: #111;
+  padding: 10px 10px 10px 36px;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+}
+.github-projects-section input,
+.github-projects-section textarea {
+  border: 0.5px solid rgba(47, 47, 47, 0.25);
+  background: #111;
+  padding: 10px 10px 10px;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 450px;
+}
+/* Tallenna-nappi */
+.save-button {
+  margin-top: 1.5rem;
+  background-color: #ff6600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+
+.cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: brightness(0.7);
+  transition: filter 0.3s ease;
+}
+
+.cover-photo-label:hover .cover-photo {
+  filter: brightness(0.5);
+}
+
+.cover-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.cover-upload-input {
+  display: none;
+}
+.cover-photo-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #1c1c1c;
+  overflow: hidden;
+  border-bottom: 1px solid #333;
+  border-radius: 0 0 10px 10px;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  cursor: pointer;
+}
+
+.cover-photo-label:hover .cover-photo {
+  filter: brightness(0.5);
+}
+
+.cover-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.cover-upload-input {
+  display: none;
+}
+
+/* Profiilikuva hieman kansikuvan päälle */
+.profile-overlap {
+  margin-top: -200px;
+  z-index: 5;
+}
+
+/* Pyöreä tai korostettu profiilikuva */
+.profile-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  border: 0.5px solid #898989;
+  object-fit: cover;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(47, 47, 47, 0.2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.github-projects-section {
+  width: 500px;
+  padding: 2rem;
+  background-color: #111;
+  border: 1px solid rgba(47, 47, 47, 0.25);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.github-projects-wrapper {
+  max-width: 1200px;         
+  margin: 0 auto;            
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 12rem;         
+}
+.image-upload-grid {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.project-image-preview {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.image-upload-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #1c1c1c;
+  color: white;
+  font-size: 2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.tag-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background-color: #2d2d2d;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: #00bfff;
+  cursor: default;
+}
+.github-section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  margin-bottom: 3rem; /* vähän overlap-efektiä, voit säätää */
+}
+.add-more-education {
+  color: #bbb;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.add-more-education:hover {
+  color: #fff;
+}
+.form-group-row {
+  display: flex;
+  gap: 6.5rem;
+  flex-wrap: wrap;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding-left: 12rem; 
+}
+
+.skill-box {
+  background-color: #111;
+  border: 1px solid rgba(47, 47, 47, 0.25);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skill-title {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #444;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.25rem 0;
+}
+
+.skill-title::placeholder {
+  color: #888;
+  font-weight: normal;
+}
+
+.skill-description {
+  background: #111;
+  border: 0.5px solid rgba(47, 47, 47, 0.25);
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white;
+  resize: none;
+  font-size: 0.9rem;
+}
+.timeline {
+  position: relative;
+  margin: 3rem auto;
+  padding-left: 2rem;
+  max-width: 700px;
+  border-left: 2px solid white;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 3rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.35rem;
+  width: 12px;
+  height: 12px;
+  background-color: #ff5e3a;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.job-title-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #444;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.25rem 0;
+  width: 100%;
+}
+
+.job-title-input::placeholder {
+  color: #888;
+}
+
+.timeline-dates-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.date-input {
+  background: #111;
+  border: 0.5px solid rgba(47, 47, 47, 0.25);
+  border-radius: 5px;
+  padding: 0.4rem;
+  color: white;
+  font-size: 0.85rem;
+  width: 150px;
+}
+
+.job-description {
+  background: #111;
+  border: 0.5px solid rgba(47, 47, 47, 0.25);
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: white;
+  resize: none;
+  font-size: 0.9rem;
+}
+.save-changes-container {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 4rem;
+}
+
+.save-changes-button {
+  border-radius: 5px;
+  background: #F3794C;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-changes-button:hover {
+  background: #d96539;
+}

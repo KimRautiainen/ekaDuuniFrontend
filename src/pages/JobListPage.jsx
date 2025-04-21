@@ -7,6 +7,7 @@ import SearchBar from "../components/Searchbar";
 import JobContext from "../contexts/JobContext";
 
 const JobListPage = () => {
+  
   const [selectedJob, setSelectedJob] = useState(null);
   const [searchTerm, setSearchTerm] = useState(""); 
   const { jobs } = useContext(JobContext);
@@ -15,6 +16,7 @@ const JobListPage = () => {
   useEffect(() => {
     if (jobs && jobs.length > 0 && !selectedJob) {
       setSelectedJob(jobs[0]);
+
     }
   }, [jobs, selectedJob]);
 
@@ -30,12 +32,13 @@ const JobListPage = () => {
 
   return (
     <>
-      <main className="job-list-page">
         <Navbar2 />
+      <main className="job-list-page">
         <SearchBar
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onSearch={() => {}} // jos haluat painikkeen tehdä jotain, lisää tähän logiikkaa
+          onSearch={() => {
+          }} // jos haluat painikkeen tehdä jotain, lisää tähän logiikkaa
         />
         <div className="job-list-container">
           <JobList

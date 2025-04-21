@@ -4,7 +4,9 @@ import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LandingPage from "./pages/LandingPage";
 import JobAdCreating from "./pages/JobAdCreating";
+import EditProfile from "./pages/EditProfile";
 import JobListPage from "./pages/JobListPage";
+
 import JobSeekerProfile from "./pages/JobSeekerProfile";
 
 
@@ -23,7 +25,6 @@ function App() {
         }
       />
       <Route path="/jobadcreating" element={<JobAdCreating />} />
-      <Route path="/jobseekerprofile" element={<JobSeekerProfile />} />
     </Routes>
   );
 }
