@@ -25,6 +25,8 @@ function App() {
         }
       />
       <Route path="/jobadcreating" element={<JobAdCreating />} />
+      <Route path="/editprofile" element={<EditProfile />} />
+      <Route path="/jobseekerprofile" element={<JobSeekerProfile />} />
     </Routes>
   );
 }

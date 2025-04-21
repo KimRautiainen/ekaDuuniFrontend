@@ -4,6 +4,8 @@ import Navbar2 from '../components/Navbar2';
 import ProfileHeader from '../components/ProfileHeader';
 import ProfileInfo from '../components/ProfileInfo';
 import ProjectSection from '../components/ProjectSection';
+import OtherSkills from '../components/OtherSkills'; 
+import WorkHistory from '../components/WorkHistory';
 
 const JobSeekerProfile = () => {
   return (
@@ -15,15 +17,18 @@ const JobSeekerProfile = () => {
         <section id="esittely">
           <ProfileInfo />
         </section>
+
         <section id="projektit">
-            <ProjectSection />
-            </section>
-            
-        {/* Lisää myöhemmin muut osiot tänne:
-        <section id="osaaminen">...</section>
-        <section id="tyohistoria">...</section>
-        */}
-        
+          <ProjectSection />
+        </section>
+
+        <section id="osaaminen">
+          <OtherSkills /> {/* ← Uusi komponentti */}
+        </section>
+
+        <section id="tyohistoria">
+  <WorkHistory />
+</section>
       </main>
     </div>
   );

@@ -1,15 +1,39 @@
 import React from 'react';
 import './EducationList.css';
 
+const educationData = [
+  {
+    degree: 'Maisteri, Tieto- ja viestintätekniikka',
+    time: '06/2023 -',
+    school: 'Metropolia'
+  },
+  {
+    degree: 'Insinööri, Tieto- ja viestintätekniikka',
+    time: '08/2020 - 04/2023',
+    school: 'Metropolia'
+  },
+  {
+    degree: 'Ylioppilas',
+    time: '08/2014 - 06/2018',
+    school: 'Lukio'
+  }
+];
+
 const EducationList = () => {
   return (
-    <div>
-      <h4 style={{ marginBottom: '16px', color: 'white' }}>Koulutus</h4>
-      <ul style={{ listStyle: 'none', padding: 0, color: '#ccc' }}>
-        <li>Metropolia AMK - Tietotekniikan insinööriopiskelija</li>
-        <li>Fullstack open - Helsingin yliopisto</li>
-        {/* Voit lisätä tänne myöhemmin tarkempaa tietoa */}
-      </ul>
+    <div className="education-list">
+      <div className="timeline">
+        {educationData.map((item, index) => (
+          <div className="timeline-item" key={index}>
+            <div className="timeline-dot" />
+            <div className="timeline-content">
+              <h5>{item.degree}</h5>
+              <p className="timeline-time">{item.time}</p>
+              <p className="timeline-school">{item.school}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

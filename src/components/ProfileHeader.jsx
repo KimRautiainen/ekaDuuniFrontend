@@ -69,7 +69,7 @@ const ProfileHeader = () => {
           <p>Tietotekniikan insinööriopiskelija</p>
         </div>
         <div className="extras">
-          <span className="experience">&gt;1 vuoden kokemus</span>
+          <span className="experience">1 vuoden kokemus</span>
           <div className="icons">
             <a className="icon-link" href="https://github.com/kayttajanimi" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGithub} />
