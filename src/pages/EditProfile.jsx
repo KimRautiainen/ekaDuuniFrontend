@@ -154,6 +154,7 @@ function EditProfile() {
             />
             <div className="cover-overlay">Lisää uusi kansikuva</div>
             <input
+              name="cover_photo"
               ref={coverImageRef}
               type="file"
               accept="image/*"
@@ -179,6 +180,7 @@ function EditProfile() {
                 <FiEdit2 className="edit-icon" />
               </div>
               <input
+                name="profile_picture"
                 ref={profileImageRef}
                 type="file"
                 accept="image/*"
