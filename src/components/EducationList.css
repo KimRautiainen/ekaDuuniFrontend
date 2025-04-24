@@ -1,0 +1,60 @@
+.education-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+  }
+  .education-title {
+    color: white;
+    margin-bottom: 24px;
+    font-size: 20px;
+  }
+  
+  .timeline {
+    position: relative;
+    margin: 0 auto; /* keskittää */
+    padding-left: 24px;
+    border-left: 2px solid #c4c4c4;
+    max-width: 600px; /* tai esim. 70% leveys, riippuu mitä haet */
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 24px; 
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background-color: #f3794c;
+    border-radius: 50%;
+  }
+  
+  .timeline-content h5 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .timeline-time {
+    margin: 0;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .timeline-school {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+  }
+  .timeline-time,
+.timeline-school {
+  margin: 0;
+  font-size: 14px;
+  line-height: .2;
+}

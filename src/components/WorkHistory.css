@@ -1,0 +1,72 @@
+.work-history-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  .work-history-content {
+    color: white;
+    line-height: 1.6;
+    border-left: 1px solid rgba(47, 47, 47, 0.25);
+    border-right: 1px solid rgba(47, 47, 47, 0.25);
+    border-top: 0.1px solid rgba(47, 47, 47, 0.25);
+    border-bottom: 0.1px solid rgba(47, 47, 47, 0.25);
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .work-history-title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  
+  .work-timeline {
+    position: relative;
+    margin: 0 auto;
+    padding-left: 24px;
+    border-left: 2px solid #c4c4c4;
+    max-width: 600px;
+  }
+  
+  .work-timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .work-timeline-dot {
+    position: absolute;
+    left: -30px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background-color: #f3794c;
+    border-radius: 50%;
+  }
+  
+  .work-timeline-content h5 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .work-timeline-time {
+    margin: 0;
+    font-size: 14px;
+    color: #aaa;
+  }
+  
+  .work-timeline-desc {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  

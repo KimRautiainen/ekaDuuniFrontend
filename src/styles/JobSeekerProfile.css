@@ -1,0 +1,14 @@
+#root {
+    width: 100%;
+  }
+.jobseeker-page {
+    background-color: #0f0f0f;
+    min-height: 100vh;
+    color: white;
+    width: 100%
+  }
+  
+  .jobseeker-main {
+    padding: 0 24px;
+    width: 100%;
+  }

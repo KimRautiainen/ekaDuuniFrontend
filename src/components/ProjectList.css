@@ -1,0 +1,151 @@
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Korttipohja */
+.project-card {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  background-color: #121212;
+  border-radius: 12px;
+  border: 1px solid rgba(47, 47, 47, 0.25);
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.project-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  width: 330px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Sisältöalue */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0 32px;
+  flex: 1;
+}
+
+/* Projektin otsikko keskitetysti */
+.project-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-size: 25px !important;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+/* Projektin kuvausosa */
+.project-meta {
+  font-size: 14px;
+  color: #ccc;
+  text-align: left;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.project-meta p {
+  margin: 4px 0;
+}
+
+/* Teknologiatagit */
+.project-tags {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.project-tag {
+  background: linear-gradient(90deg, #4CC9F0 0%, #2C748A 100%);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+}
+
+/* Reverse-tilan tekstin kohdistus */
+.project-card.reverse .project-info {
+  padding-right: 32px;
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .project-card.reverse {
+    flex-direction: column;
+  }
+
+  .project-card.reverse .project-info {
+    padding-right: 0;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+
+  .project-header {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-meta {
+    font-size: 14px;
+  }
+}
+/* GitHub-nappi */
+.github-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.github-button {
+  background-color: #F3794C;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.github-button:hover {
+  background-color: #e0673d;
+  transform: translateY(-2px);
+  color: #e6e6e6;
+}

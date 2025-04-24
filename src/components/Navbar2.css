@@ -104,7 +104,10 @@
     .nav-links.open {
       display: flex;
     }
-  
+    .logo {
+      position: absolute;
+      left: 50px; 
+    }
     .menu-icon {
       display: block;
     }
