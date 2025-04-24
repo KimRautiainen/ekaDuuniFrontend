@@ -20,12 +20,11 @@
   }
   
   .profile-info .content {
-    max-width: 100%;              
-    box-sizing: border-box;
-    padding-left: 40px;          
-    padding-right: 40px;          
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: left;
+    display: block;
   }
-  
   .heading-row {
     display: flex;
     flex-direction: column;
@@ -48,11 +47,24 @@
     margin-right: 4px;
   }
   
-  .profile-info p1 {
+  .profile-info p {
     margin-bottom: 16px;
     color: white;
     font-size: 15px;
     margin-top: 26px;
     font-weight: 500;
     letter-spacing: -0.3px;
+    text-align: left;
+  }
+  .markdown-bio {
+    text-align: left;
+    margin-left: 0;   /* Avoid margin auto */
+    margin-right: 0;
+    width: auto;      /* Let it grow naturally */
+    max-width: 100%;  /* Ensure it doesn't go too wide */
+    border: none;     /* You can remove the red border now */
+  }
+  
+  .markdown-bio ul {
+    margin-left: 20px;
   }

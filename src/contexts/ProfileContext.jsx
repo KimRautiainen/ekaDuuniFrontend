@@ -18,7 +18,7 @@ export const ProfileProvider = ({ children }) => {
     } finally {
       setLoading(false);
     }
-  }, [getProfile]);
+  }, []);
 
   useEffect(() => {
     fetchProfile();
