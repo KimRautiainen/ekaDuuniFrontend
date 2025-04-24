@@ -13,7 +13,7 @@ import MDEditor from "@uiw/react-md-editor";
 
 function EditProfile() {
   const { user, setUser } = useContext(AuthContext); // Get user and setUser from AuthContext
-  const { profile, setProfile } = useContext(ProfileContext); // Get profile and setProfile from ProfileContext
+  const { profile, setProfile, refreshProfile } = useContext(ProfileContext); // Get profile and setProfile from ProfileContext
   /*  const [coverImagePreview, setCoverImagePreview] = useState(
     profile?.profile?.cover_photo || "src/assets/images/wide.png"
   );
@@ -47,28 +47,15 @@ function EditProfile() {
   const coverImageRef = useRef(null);
   const profileImageRef = useRef(null);
 
-  // MOVE THE USE EFFECT TO PROFILE WHEN IT'S READY
-  useEffect(() => {
-    const fetchProfile = async () => {
-      const profileData = await getProfile();
-      if (profileData) setProfile(profileData);
-    };
-    if (!profile) fetchProfile();
-  }, [profile, setProfile, getProfile]);
-
   useEffect(() => {
     if (profile?.profile) {
-      setCoverImagePreview(
-        profile.profile.cover_photo || "src/assets/images/wide.png"
-      );
-      setProfileImagePreview(
-        profile.profile.profile_picture || "src/assets/images/profilepic.png"
-      );
+      setCoverImagePreview(profile.profile.cover_photo || "src/assets/images/wide.png");
+      setProfileImagePreview(profile.profile.profile_picture || "src/assets/images/profilepic.png");
       setProfileBio(profile.profile.bio || "");
       setGithub(profile.profile.github || "");
       setPortfolio(profile.profile.portfolio || "");
     }
-
+  
     if (user?.user) {
       const [first, last] = user.user.full_name?.split(" ") || ["", ""];
       setFirstName(first);
@@ -76,6 +63,7 @@ function EditProfile() {
       setEmail(user.user.email || "");
     }
   }, [profile, user]);
+ 
 
   console.log("User data:", user); // Debugging line
   console.log("Profile data:", profile); // Debugging line
@@ -103,8 +91,10 @@ function EditProfile() {
       // Update or create profile
       if (profile?.profile?.id) {
         await updateProfile(profileForm);
+        await refreshProfile(); // Refresh profile to get the latest data
       } else {
         await createProfile(profileForm);
+        await refreshProfile(); // Refresh profile to get the latest data
       }
 
       if (projectImages.length > 0 && projectName && projectLink) {
@@ -129,6 +119,7 @@ function EditProfile() {
         // projectForm.append("end_date", "2024-06-15");
 
         await createProject(projectForm);
+        
       }
 
       alert("Tiedot tallennettu!");

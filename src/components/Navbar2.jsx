@@ -66,7 +66,7 @@ const Navbar2 = () => {
             />
             {isDropdownOpen && (
               <div className="dropdown-menu">
-                <NavLink to="/profile" className="dropdown-item">
+                <NavLink to="/jobseekerprofile" className="dropdown-item">
                   <FiUser className="dropdown-icon" /> Profiili
                 </NavLink>
                 <button onClick={logout} className="dropdown-item logout">
