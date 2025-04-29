@@ -1,92 +1,93 @@
-.project-section-wrapper {
-    max-width: 1200px;
+.ps-section-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.ps-section-content {
+  color: white;
+  line-height: 1.6;
+  border-left: 1px solid rgba(47, 47, 47, 0.25);
+  border-right: 1px solid rgba(47, 47, 47, 0.25);
+  border-top: 0.1px solid rgba(47, 47, 47, 0.25);
+  border-bottom: 0.1px solid rgba(47, 47, 47, 0.25);
+  padding: 32px 0;
+  align-items: center;
+}
+
+.ps-section-content h3 {
+  font-size: 20px;
+  margin: 0 0 16px 0;
+}
+
+.ps-section-content .ps-toggle-buttons {
+  display: flex;
+  gap: 12px;
+  margin-left: 40px;
+  margin-bottom: 24px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.ps-section-content .ps-toggle-buttons button {
+  background: none;
+  color: #C8C8C8;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.ps-section-content .ps-toggle-buttons button.active {
+  background-color: #f47b5b;
+  color: white;
+}
+
+.ps-section-content .ps-content-area {
+  padding: 0 40px;
+}
+
+.ps-project-card {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  margin-bottom: 24px;
+  background-color: #121212;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.ps-project-image {
+  flex-shrink: 0;
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.ps-project-info {
+  flex: 1;
+  color: white;
+}
+
+.ps-project-info h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .ps-project-card {
+    flex-direction: column;
+  }
+
+  .ps-project-image {
     width: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
+    height: auto;
+    max-height: 180px;
   }
-  
-  .project-section-content {
-    color: white;
-    line-height: 1.6;
-    border-left: 1px solid rgba(47, 47, 47, 0.25);
-    border-right: 1px solid rgba(47, 47, 47, 0.25);
-    border-top: 0.1px solid rgba(47, 47, 47, 0.25);
-    border-bottom: 0.1px solid rgba(47, 47, 47, 0.25);
-    padding: 32px 0;
-    align-items: center;
-  }
-  
-  .project-section-content h3 {
-    font-size: 20px;
-    margin: 0 0 16px 0;
-  }
-  
-  .project-section-content .toggle-buttons {
-    display: flex;
-    gap: 12px;
-    margin-left: 40px;
-    margin-bottom: 24px;
-    margin-top: 12px;
-    justify-content: center;
-  }
-  
-  .project-section-content .toggle-buttons button {
-    background: none;
-    color: #C8C8C8;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.2s;
-  }
-  
-  .project-section-content .toggle-buttons button.active {
-    background-color: #f47b5b;
-    color: white;
-  }
-  
-  .project-section-content .content-area {
-    padding: 0 40px;
-  }
-  .project-card {
-    display: flex;
-    gap: 24px;
-    padding: 24px;
-    margin-bottom: 24px;
-    background-color: #121212;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    align-items: flex-start;
-    overflow: hidden;
-  }
-  
-  .project-image {
-    flex-shrink: 0;
-    width: 200px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 8px;
-    background-color: white;
-  }
-  
-  .project-info {
-    flex: 1;
-    color: white;
-  }
-  
-  .project-info h3 {
-    margin-top: 0;
-    font-size: 18px;
-  }
-  
-  @media (max-width: 768px) {
-    .project-card {
-      flex-direction: column;
-    }
-  
-    .project-image {
-      width: 100%;
-      height: auto;
-      max-height: 180px;
-    }
-  }
+}

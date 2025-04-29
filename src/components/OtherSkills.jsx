@@ -31,22 +31,22 @@ const otherSkills = [
 
 const OtherSkills = () => {
   return (
-    <section id="osaaminen" className="other-skills-wrapper">
-    <div className="other-skills-content">
-      <h2 className="other-skills-heading">Muu osaaminen</h2>
-      <div className="skill-grid">
-        {otherSkills.map((skill, index) => (
-          <div
-            className={`skill-card ${skill.gradient ? 'gradient' : ''}`}
-            key={index}
-          >
-            <h3>{skill.title}</h3>
-            <div className="skill-description">{skill.description}</div>
-          </div>
-        ))}
+    <section id="osaaminen" className="os-wrapper">
+      <div className="os-content">
+        <h2 className="os-heading">Muu osaaminen</h2>
+        <div className="os-grid">
+          {otherSkills.map((skill, index) => (
+            <div
+              className={`os-card ${skill.gradient ? 'os-gradient' : ''}`}
+              key={index}
+            >
+              <h3>{skill.title}</h3>
+              <div className="os-description">{skill.description}</div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   );
 };
 

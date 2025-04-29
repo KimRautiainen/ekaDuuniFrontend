@@ -7,9 +7,9 @@ const ProjectSection = () => {
   const [activeView, setActiveView] = useState('projektit');
 
   return (
-    <section id="projektit" className="project-section-wrapper">
-      <div className="project-section-content">
-        <div className="toggle-buttons">
+    <section id="projektit" className="ps-section-wrapper">
+      <div className="ps-section-content">
+        <div className="ps-toggle-buttons">
           <button
             className={activeView === 'projektit' ? 'active' : ''}
             onClick={() => setActiveView('projektit')}
@@ -24,7 +24,7 @@ const ProjectSection = () => {
           </button>
         </div>
 
-        <div className="content-area">
+        <div className="ps-content-area">
           {activeView === 'projektit' ? <ProjectList /> : <EducationList />}
         </div>
       </div>

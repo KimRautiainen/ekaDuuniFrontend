@@ -1,11 +1,11 @@
-.project-list {
+.pl-list {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
 /* Korttipohja */
-.project-card {
+.pl-card {
   display: flex;
   gap: 24px;
   padding: 24px;
@@ -16,11 +16,11 @@
   overflow: hidden;
 }
 
-.project-card.reverse {
+.pl-card.reverse {
   flex-direction: row-reverse;
 }
 
-.project-image {
+.pl-image {
   width: 330px;
   height: 330px;
   object-fit: cover;
@@ -31,7 +31,7 @@
 }
 
 /* Sisältöalue */
-.project-info {
+.pl-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -41,14 +41,14 @@
 }
 
 /* Projektin otsikko keskitetysti */
-.project-header {
+.pl-header {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-bottom: 12px;
 }
 
-.project-title {
+.pl-title {
   font-size: 25px !important;
   font-weight: 600;
   margin: 0;
@@ -56,7 +56,7 @@
 }
 
 /* Projektin kuvausosa */
-.project-meta {
+.pl-meta {
   font-size: 14px;
   color: #ccc;
   text-align: left;
@@ -64,19 +64,19 @@
   line-height: 1.6;
 }
 
-.project-meta p {
+.pl-meta p {
   margin: 4px 0;
 }
 
 /* Teknologiatagit */
-.project-tags {
+.pl-tags {
   margin-top: 8px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.project-tag {
+.pl-tag {
   background: linear-gradient(90deg, #4CC9F0 0%, #2C748A 100%);
   color: #fff;
   padding: 6px 12px;
@@ -87,52 +87,53 @@
 }
 
 /* Reverse-tilan tekstin kohdistus */
-.project-card.reverse .project-info {
+.pl-card.reverse .pl-info {
   padding-right: 32px;
 }
 
 /* Responsiivisuus */
 @media (max-width: 768px) {
-  .project-card {
+  .pl-card {
     flex-direction: column;
     padding: 16px;
   }
 
-  .project-card.reverse {
+  .pl-card.reverse {
     flex-direction: column;
   }
 
-  .project-card.reverse .project-info {
+  .pl-card.reverse .pl-info {
     padding-right: 0;
   }
 
-  .project-image {
+  .pl-image {
     width: 100%;
     height: auto;
     max-height: 200px;
   }
 
-  .project-header {
+  .pl-header {
     justify-content: center;
     margin-bottom: 10px;
   }
 
-  .project-title {
+  .pl-title {
     font-size: 18px;
   }
 
-  .project-meta {
+  .pl-meta {
     font-size: 14px;
   }
 }
+
 /* GitHub-nappi */
-.github-button-wrapper {
+.pl-github-button-wrapper {
   display: flex;
   justify-content: center;
   margin-top: 24px;
 }
 
-.github-button {
+.pl-github-button {
   background-color: #F3794C;
   color: #fff;
   text-decoration: none;
@@ -144,7 +145,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-.github-button:hover {
+.pl-github-button:hover {
   background-color: #e0673d;
   transform: translateY(-2px);
   color: #e6e6e6;

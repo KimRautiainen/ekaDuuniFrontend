@@ -22,36 +22,36 @@ const projects = [
 
 const ProjectList = () => {
   return (
-    <div className="project-list">
+    <div className="pl-list">
       {projects.map((project, index) => (
-        <div className={`project-card ${index % 2 !== 0 ? 'reverse' : ''}`} key={index}>
-          <img src={project.image} alt={project.title} className="project-image" />
-          <div className="project-info">
-            <div className="project-header">
-              <h3 className="project-title">{project.title}</h3>
+        <div className={`pl-card ${index % 2 !== 0 ? 'reverse' : ''}`} key={index}>
+          <img src={project.image} alt={project.title} className="pl-image" />
+          <div className="pl-info">
+            <div className="pl-header">
+              <h3 className="pl-title">{project.title}</h3>
             </div>
 
-            <div className="project-meta">
+            <div className="pl-meta">
               <p><strong>Rooli:</strong> {project.role}</p>
               <p><strong>Aikajana:</strong> {project.timeline}</p>
               <p><strong>Mitä tein:</strong> {project.description}</p>
             </div>
 
-            <div className="project-tags">
+            <div className="pl-tags">
               {project.tags.map((tag, i) => (
-                <span className="project-tag" key={i}>{tag}</span>
+                <span className="pl-tag" key={i}>{tag}</span>
               ))}
             </div>
           </div>
         </div>
       ))}
 
-      <div className="github-button-wrapper">
+      <div className="pl-github-button-wrapper">
         <a
           href="https://github.com/kayttajatunnuksesi" // ← Vaihda tämä omaan GitHub-osoitteeseesi
           target="_blank"
           rel="noopener noreferrer"
-          className="github-button"
+          className="pl-github-button"
         >
           Lisää projekteja GitHubissa
         </a>

@@ -43,13 +43,13 @@ const ProfileHeader = () => {
   };
 
   return (
-    <div className="profile-wrapper">
-      <div className="banner">
-        <div className="tabs">
+    <div className="ph-profile-wrapper">
+      <div className="ph-banner">
+        <div className="ph-tabs">
           {sections.map((section) => (
             <button
               key={section.id}
-              className={`tab ${activeTab === section.id ? 'active' : ''}`}
+              className={`ph-tab ${activeTab === section.id ? 'ph-active' : ''}`}
               onClick={() => scrollToSection(section.id)}
             >
               {section.label}
@@ -58,27 +58,27 @@ const ProfileHeader = () => {
         </div>
       </div>
 
-      <div className="profile-details">
+      <div className="ph-profile-details">
         <img
           src="src/assets/images/profilepic.png"
           alt="Profiilikuva"
-          className="avatar"
+          className="ph-avatar"
         />
-        <div className="info">
+        <div className="ph-info">
           <h2>Erika Esimerkki</h2>
           <p>Tietotekniikan insinööriopiskelija</p>
         </div>
-        <div className="extras">
-          <span className="experience">1 vuoden kokemus</span>
-          <div className="icons">
-            <a className="icon-link" href="https://github.com/kayttajanimi" target="_blank" rel="noopener noreferrer">
+        <div className="ph-extras">
+          <span className="ph-experience">1 vuoden kokemus</span>
+          <div className="ph-icons">
+            <a className="ph-icon-link" href="https://github.com/kayttajanimi" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGithub} />
             </a>
-            <a className="icon-link" href="https://esimerkki.fi" target="_blank" rel="noopener noreferrer">
+            <a className="ph-icon-link" href="https://esimerkki.fi" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faGlobe} />
             </a>
           </div>
-          <button className="contact-btn">Ota yhteyttä</button>
+          <button className="ph-contact-btn">Ota yhteyttä</button>
         </div>
       </div>
     </div>

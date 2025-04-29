@@ -1,133 +1,80 @@
-.other-skills {
-    padding: 48px 16px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .other-skills-heading {
-    color: white;
-    font-size: 28px;
-    margin-bottom: 32px;
-    margin-top: 25px;
-  }
-  
-  .skill-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-  }
-  
-  .skill-card {
-    background-color: #111;
-    border-radius: 12px;
-    padding: 24px;
-    color: white;
-    text-align: left;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
-    transition: transform 0.2s ease;
-  }
-  
-  .skill-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .skill-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
-  
-  .skill-description {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #ccc;
-    border: none;
-  }
-  
-  .skill-card ul {
-    padding-left: 20px;
-    margin: 0;
-  }
-  
-  .gradient {
-    background: linear-gradient(135deg, #ff5fad, #835df1);
-    color: white;
-  }
-  
-  .gradient .skill-description {
-    color: white;
-    background: none;
+* {
+  box-sizing: border-box;
+}
+
+.os-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.os-content {
+  color: white;
+  line-height: 1.6;
+  border-left: 1px solid rgba(47, 47, 47, 0.25);
+  border-right: 1px solid rgba(47, 47, 47, 0.25);
+  border-top: 0.1px solid rgba(47, 47, 47, 0.25);
+  border-bottom: 0.1px solid rgba(47, 47, 47, 0.25);
+  padding: 32px 0;
+  align-items: center;
+}
+
+.os-heading {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 32px;
+  color: white;
+  margin-top: 25px;
+}
+
+.os-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.os-card {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 24px;
+  color: white;
+  text-align: left;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.os-card:hover {
+  transform: translateY(-4px);
+}
+
+.os-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.os-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.os-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.os-gradient {
+  background: linear-gradient(135deg, #ff5fad, #835df1);
+  color: white;
+}
+
+.os-gradient .os-description {
+  color: white;
+  background: none;
   padding: 0;
   border: none;
-  }
-/* Wrapper kuten ProjectSectionin ulkokuori */
-.other-skills-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  
-  /* Kehystetty sisältö kuten .project-section-content */
-  .other-skills-content {
-    color: white;
-    line-height: 1.6;
-    border-left: 1px solid rgba(47, 47, 47, 0.25);
-    border-right: 1px solid rgba(47, 47, 47, 0.25);
-    border-top: 0.1px solid rgba(47, 47, 47, 0.25);
-    border-bottom: 0.1px solid rgba(47, 47, 47, 0.25);
-    padding: 32px 0;
-    align-items: center;
-  }
-  
-  /* Otsikko */
-  .other-skills-heading {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 32px;
-  }
-  
-  /* Grid layout korttien sisälle */
-  .skill-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* aina kaksi per rivi */
-    gap: 32px;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  /* Yksittäinen taito */
-  .skill-card {
-    background-color: #111;
-    border-radius: 12px;
-    padding: 24px;
-    color: white;
-    text-align: left;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
-  }
-  
-  .skill-card h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
-  
-  .skill-description {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #ccc;
-  }
-  
-  .skill-card ul {
-    padding-left: 20px;
-    margin: 0;
-  }
-  
-  /* Gradient-erikoiskortti */
-  .gradient {
-    background: linear-gradient(135deg, #ff5fad, #835df1);
-    color: white;
-  }
-  
-  .gradient .skill-description {
-    color: white;
-  }
+}
