@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./CarouselJobCard.css";
 import { FaMapMarkerAlt, FaEuroSign } from "react-icons/fa";
 
-const CarouselJobCard = ({ job }) => {
+const CarouselJobCard = ({ job, onClick }) => {
   const { title, company, location, logo, min_salary, Skills, createdAt } = job;
 
   // Format the date (e.g., "Announced 5.2")
@@ -20,7 +20,7 @@ const CarouselJobCard = ({ job }) => {
     : [];
 
   return (
-    <div className="Carousel-job-card">
+    <div className="Carousel-job-card" onClick={onClick}>
       {/* Left - Job Image */}
       <div className="Carousel-job-card-logo-container">
         <img src={logo} alt={company} className="Carousel-job-card-logo" />

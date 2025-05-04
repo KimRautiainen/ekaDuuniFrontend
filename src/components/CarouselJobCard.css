@@ -146,3 +146,11 @@
     white-space: nowrap;
     overflow: hidden;
 }
+/* hover effect on job card and change pointer type on mouse*/
+.Carousel-job-card:hover {
+    background: rgba(76, 201, 240, 0.1);
+    box-shadow: 0px 4px 20px rgba(76, 201, 240, 0.2);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    
+}

@@ -108,7 +108,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.24);
     background: #232323;
     margin-left: 363px;
-    margin-top: 20px;
+    margin-top: 80px;
     overflow: hidden;
     z-index: 1;
 }
@@ -222,7 +222,7 @@ body {
 .info-container {
     position: relative;
     width: 100%;
-    height: 550px;
+    height: 606px;
     flex-shrink: 0;
     background-color: #1f1f1f;
     border-radius: 5px;
@@ -306,12 +306,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 30px;
+    gap: 60px;
 }
 
 .info-item {
     width: 325px;
-    height: 331px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -338,6 +337,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
+    border: 1px solid #fff;
 }
 
 .image-container img {

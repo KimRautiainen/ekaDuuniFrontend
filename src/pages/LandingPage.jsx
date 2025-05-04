@@ -94,7 +94,7 @@ const LandingPage = () => {
                 <div className="info-ball"></div>
                 <img src={info2} alt="Laaja sovellus" />
               </div>
-              <h3>Laaja sovellus</h3>
+              <h3>Laaja suodatus</h3>
               <p>
               Unohda loputon selailu – suodata työpaikkoja ohjelmointikielen, työroolin tai teknologian mukaan
               </p>
