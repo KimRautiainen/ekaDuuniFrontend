@@ -166,5 +166,53 @@
     .navbar3-menu-icon {
       display: block;
     }
+
+    @media (max-width: 650px) {
+
+        /* Piilotetaan oletus-flexistä desktop-asetukset */
+        .navbar3-nav-links {
+            top: 63px;               /* just under the navbar */
+            left: auto !important;   /* ignore the old centering */
+            right: 0 !important;     /* pin to the right edge */
+            width: 50vw !important;  /* cover half the viewport */
+            height: calc(100vh - 63px);
+            display: none;           /* hidden by default */
+            flex-direction: column;
+            background-color: #111111;
+            padding: 8px 0;
+            overflow-y: auto;
+            z-index: 99;
+          }
+      
+        /* Näytä kun isOpen=true */
+        .navbar3-nav-links.open {
+          display: flex !important;
+        }
+      
+        /* Poistetaan keskitys-transformit */
+        .navbar3-nav-links {
+          transform: none !important;
+          left: 1 !important;
+        }
+      
+        /* Linkkien sisennys ja värit */
+        .navbar3-nav-links li {
+          margin: 1px 0 1px ;
+        }
+        .navbar3-nav-links li a {
+          padding: 12px 16px;
+          color: var(--color-text-light);
+          font-size: 16px;
+        }
+        .navbar3-nav-links li a:hover {
+          background: #222222;
+        }
+      
+        /* Hampparitykki näkyviin */
+        .navbar3-menu-icon {
+          display: block;
+        }
+      }
+      
   }
   

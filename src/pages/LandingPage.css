@@ -94,7 +94,7 @@ body {
     letter-spacing: -0.48px;
     margin-left: 352px;
     width: 448px;
-    height: 58px;
+    height: 120px;
     flex-shrink: 0;
 }
 
@@ -302,7 +302,7 @@ body {
 }
 
 .info-trio {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -311,7 +311,7 @@ body {
 
 .info-item {
     width: 325px;
-    height: 331px;
+    height: 365px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -462,7 +462,7 @@ body {
     background-color: #e36439;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
 
     /* koko sivun sivureunat 16px */
     .landing-container {
@@ -580,7 +580,6 @@ body {
         /* Vähintään tuo alkuperäinen minimi, jos haluat */
         min-height: 550px;
         /* Lisätään pikku sisäistä tilaa alareunaan */
-        padding-bottom: 32px !important;
     }
 
     .info-trio {
@@ -598,4 +597,52 @@ body {
         text-align: center;
         /* jos haluat keskittää tekstin */
     }
+
+    .info-text h2,
+    .info-text p {
+      white-space: normal !important;   /* rivitys päälle */
+      width: auto !important;           /* ei kiinteää leveysarvoa */
+      max-width: 100% !important;       /* enintään 100% ruudusta */
+      margin: 0 auto 8px !important;    /* keskitys ja pieni väli alla */
+      padding: 0 16px !important;       /* sivupaddi */
+      box-sizing: border-box;
+      text-align: center;               /* halutessasi keskitä teksti */
+      font-size: 20px !important;       /* voit säätää kokoa */
+      line-height: 1.3 !important;      /* selkeä riviväli */
+    }
+  
+    .info-text h2 {
+      margin-bottom: 25px !important;
+      font-size: 26px !important;
+    }
+    .info-text p {
+      font-size: 16px !important;
+      color: #AEAEAE !important;
+    }
+
+    .footer-container {
+        position: relative !important;
+        padding: 50% 16px 16px !important;
+        margin-top: 32px !important;
+      }
+      .footerPic {
+        position: absolute !important;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .footer-text {
+        margin-top: 100px !important;
+        box-sizing: border-box;
+       
+      }
+      jobs-link-bottom {
+        position: relative !important;
+      }
+      .footers-section {
+        margin-top: 120px;
+        margin-bottom: 160px;
+      }
 }
