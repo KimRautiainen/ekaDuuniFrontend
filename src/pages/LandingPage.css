@@ -94,7 +94,7 @@ body {
     letter-spacing: -0.48px;
     margin-left: 352px;
     width: 448px;
-    height: 120px;
+    height: 58px;
     flex-shrink: 0;
 }
 
@@ -302,7 +302,7 @@ body {
 }
 
 .info-trio {
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -311,7 +311,7 @@ body {
 
 .info-item {
     width: 325px;
-    height: 365px;
+    height: 331px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -610,7 +610,7 @@ body {
       font-size: 20px !important;       /* voit säätää kokoa */
       line-height: 1.3 !important;      /* selkeä riviväli */
     }
-  
+
     .info-text h2 {
       margin-bottom: 25px !important;
       font-size: 26px !important;
@@ -636,7 +636,7 @@ body {
       .footer-text {
         margin-top: 100px !important;
         box-sizing: border-box;
-       
+
       }
       jobs-link-bottom {
         position: relative !important;
