@@ -461,3 +461,141 @@ body {
 .jobs-link-bottom:hover {
     background-color: #e36439;
 }
+
+@media screen and (max-width: 600px) {
+
+    /* koko sivun sivureunat 16px */
+    .landing-container {
+        padding: 0 16px;
+    }
+
+    /* Man+circle keskitetty ja skaalattu */
+    .landing-man-container {
+        position: relative;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 400px;
+        height: 400px;
+
+    }
+
+    .landing-man-circle {
+
+        left: 50px;
+        width: 307px;
+        height: 307px;
+    }
+
+    .manpc {
+        /* käyttää jo absolute-asetuksia, vain skaalataan sisällä */
+        width: 344px;
+        height: 258px;
+        left: 17px;
+        top: 35px;
+        /* säädä vertikaalia tiukemmin */
+        transform: scaleX(-1);
+    }
+
+    /* Hero-lohko päällekkäin kuvaan (osittain) */
+    .landing-firstsite-container {
+        position: relative;
+        top: auto;
+        left: auto;
+    }
+
+    .landing-logo-text {
+        font-size: 40px;
+        letter-spacing: -0.8px;
+        line-height: normal;
+        margin: auto 32px 0px;
+        height: 85px;
+    }
+
+    .landing-logo-text .dot {
+        font-size: 40px;
+    }
+
+    .landing-subtitle {
+        white-space: nowrap;
+        color: #AEAEAE;
+        margin-left: 20px;
+        width: 293px;
+        height: 80px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: -0.32px;
+    }
+
+    /* Haku­palkki */
+    .search-bar {
+        width: auto;
+        height: 40px;
+        margin-left: 30px;
+        margin-top: 0px;
+    }
+
+    .search-bar input {
+        font-size: 14px;
+    }
+
+    .search-bar button {
+        width: 113px;
+        height: 34px;
+        margin-right: 2px;
+        padding: 0% 0.6rem;
+        font-size: 13px;
+    }
+
+    /* Työnhakija-indikaattori */
+    .job-indicator {
+        margin: 20px auto 0;
+        text-align: center;
+    }
+
+    .job-images {
+        margin-left: 45px;
+        justify-content: center;
+    }
+
+    .job-images img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .job-info p {
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.28px;
+    }
+
+    .job-carousel {
+        margin-top: 10px;
+    }
+
+    .info-container {
+        /* Poistetaan kiinteä korkeus ja annetaan sisältö kasvaa */
+        height: auto !important;
+        /* Vähintään tuo alkuperäinen minimi, jos haluat */
+        min-height: 550px;
+        /* Lisätään pikku sisäistä tilaa alareunaan */
+        padding-bottom: 32px !important;
+    }
+
+    .info-trio {
+        flex-direction: column;
+        align-items: center;
+        /* keskittää jokaisen info-itemin */
+        gap: 16px;
+        /* tilaa korttien väliin */
+    }
+
+    .info-text {
+        width: 100% !important;
+        padding: 0 16px;
+        box-sizing: border-box;
+        text-align: center;
+        /* jos haluat keskittää tekstin */
+    }
+}
