@@ -232,9 +232,8 @@
     align-items: center;
     position: absolute;
     width: 26px;
-    height: auto;
-    left: 0;
-    padding: 0 10px;
+    height: 26px;
+    left: 5px;
     top: 63%;
     transform: translateY(-50%);
     color: #000;
