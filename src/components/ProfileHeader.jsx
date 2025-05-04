@@ -80,7 +80,7 @@ const ProfileHeader = () => {
         <img
           src={
             profile?.profile?.profile_picture ||
-            "src/assets/images/profilepic.png"
+            "/profilepic.png"
           }
           alt="Profiilikuva"
           className="avatar"

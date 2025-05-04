@@ -7,7 +7,7 @@ const projects = [
     role: 'Developer',
     timeline: 'From explorations to final product in 2 weeks.',
     description: 'Kehitin Weather-sovelluksen front-endin käyttämällä Reactia ja TypeScriptiä, hyödyntäen OpenWeather APIa reaaliaikaisten säätietojen hakemiseen. Toteutin responsiivisen käyttöliittymän Tailwind CSS:llä varmistaen, että sovellus toimii sujuvasti eri laitteilla.',
-    image: 'src/assets/images/elisa-logo.jpg',
+    image: '/elisa-logo.jpg',
     tags: ['TypeScript', 'React', 'Tailwind', 'OpenWeather API']
   },
   {
@@ -15,7 +15,7 @@ const projects = [
     role: 'Developer',
     timeline: 'From explorations to final product in 4 weeks.',
     description: 'Kehitin Marketing CRM -sovelluksen front-endin Reactilla ja TypeScriptillä, hyödyntäen Next.js:n server-side renderöintiä suorituskyvyn parantamiseksi. Käytin Zustandia tilanhallintaan ja integroin sovelluksen RESTful APIin asiakastietojen ja kampanjadatan hakemiseksi.',
-    image: 'src/assets/images/metropolia-logo.png',
+    image: '/metropolia-logo.png',
     tags: ['TypeScript', 'React', 'Next.js', 'Zustand']
   }
 ];
